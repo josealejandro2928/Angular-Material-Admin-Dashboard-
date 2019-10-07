@@ -1,0 +1,907 @@
+/*
+Template Name: Material Pro Admin
+Author: Themedesigner
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+// Variables
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
+$bodyfont : 'Poppins',
+sans-serif;
+$headingfont : 'Poppins',
+sans-serif;
+
+@import '~@angular/material/theming';
+@import '../../app/backend/layout/layout-theme.scss';
+@import '../../app/shared/common-components/menu-list-item/menu-list-item-theme.scss';
+
+////////////////////////////////////////////////////////////////////////////
+@include mat-core();
+$custom-typography : mat-typography-config($font-family : 'Roboto');
+// Override the typography in the core CSS.
+@include mat-core($custom-typography);
+
+//////Constant part of themes/////
+$warn : mat-palette($mat-red, 500);
+$warn-100 : mat-palette($mat-red, 100);
+$warn-color : mat-color($warn);
+$warn-color-100 : mat-color($warn-100);
+
+.customThemeClass {
+
+  $custom-primary: mat-palette($mat-blue, 900, 700, 100);
+  $custom-primary-50: mat-palette($mat-blue, 50);
+  $custom-primary-100: mat-palette($mat-blue, 100);
+  $custom-primary-200: mat-palette($mat-blue, 200);
+  $custom-primary-500: mat-palette($mat-blue, 500);
+  $custom-primary-700: mat-palette($mat-blue, 700);
+  $custom-accent: mat-palette($mat-amber, 500);
+  $customTheme: mat-light-theme($custom-primary, $custom-accent, $warn);
+
+  $main-color: mat-color($custom-primary);
+  $main-color-50: mat-color($custom-primary-50);
+  $main-color-100: mat-color($custom-primary-100);
+  $main-color-200: mat-color($custom-primary-200);
+  $main-color-500: mat-color($custom-primary-500);
+  $main-color-700: mat-color($custom-primary-700);
+  $accent-color: mat-color($custom-accent);
+
+  // Default Theme
+  @include angular-material-theme($customTheme);
+  @include layout-theme($main-color, $main-color-700, $main-color-500, $main-color-100, $accent-color);
+  @include menu-list-item-theme($main-color, $main-color-100, $main-color-500, $main-color-700, $accent-color);
+
+  .timepicker__header {
+    background-color: $main-color !important;
+  }
+
+  .timepicker-button {
+    color: $main-color !important;
+  }
+
+  .mat-tab-label-active {
+    color: $main-color !important;
+    font-weight: 500 !important;
+  }
+
+  td.active {
+    background-color: $main-color !important;
+  }
+
+  td {
+    .active {
+      background-color: $main-color !important;
+    }
+  }
+
+  .btn {
+    margin-left: 10px;
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .ranges ul li button.active {
+    background-color: $main-color !important;
+    color: #fff;
+  }
+
+  .date-range .btn {
+    background-color: $main-color !important;
+  }
+
+  .date-range .md-drppicker .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .btn:focus,
+  .md-drppicker .btn:hover {
+    background-color: $main-color !important;
+  }
+
+  .buttons .buttons_input .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker td.active,
+  .md-drppicker td.active:hover {
+    background-color: $main-color;
+  }
+
+  .mat-step-header .mat-step-label.mat-step-label-active {
+    color: $main-color !important;
+  }
+
+  .contract-input:focus {
+    border: $main-color solid 2.2px !important;
+    box-shadow: 0 0 10px $main-color !important;
+  }
+
+  .contract-input-error:focus {
+    border: #f44336 solid 2.5px !important;
+    // outline: none !important;
+    box-shadow: 0 0 10px #f44336 !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer {
+    background-color: $main-color !important;
+    // cursor: pointer !important;
+    width: 13px !important;
+    height: 13px !important;
+    top: -6px !important;
+    background-color: $main-color;
+    z-index: 3 !important;
+    border-radius: 16px !important;
+  }
+
+  .ng5-slider .ng5-slider-selection {
+    background: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer.ng5-slider-active:after {
+    background-color: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 4px;
+    background-color: $main-color !important;
+  }
+
+}
+
+.tealThemeClass {
+  ///////////////////////*Teal Theme*/////////////////////////////////////
+  $teal-primary: mat-palette($mat-teal, 900, 700, 100);
+  $teal-primary-50: mat-palette($mat-teal, 50);
+  $teal-primary-100: mat-palette($mat-teal, 100);
+  $teal-primary-200: mat-palette($mat-teal, 200);
+  $teal-primary-500: mat-palette($mat-teal, 500);
+  $teal-primary-700: mat-palette($mat-teal, 700);
+  $teal-accent: mat-palette($mat-pink, 900);
+  $tealTheme: mat-light-theme($teal-primary, $teal-accent, $warn);
+
+  // $background: map-get($tealTheme, background);
+  // $foreground: map-get($tealTheme, foreground);
+
+  $main-color: mat-color($teal-primary);
+  $main-color-50: mat-color($teal-primary-50);
+  $main-color-100: mat-color($teal-primary-100);
+  $main-color-200: mat-color($teal-primary-200);
+  $main-color-500: mat-color($teal-primary-500);
+  $main-color-700: mat-color($teal-primary-700);
+  $accent-color: mat-color($teal-accent);
+  @include angular-material-theme($tealTheme);
+  @include layout-theme($main-color, $main-color-700, $main-color-500, $main-color-100, $accent-color);
+  @include menu-list-item-theme($main-color, $main-color-100, $main-color-500, $main-color-700, $accent-color);
+
+  .timepicker__header {
+    background-color: $main-color !important;
+  }
+
+  .timepicker-button {
+    color: $main-color !important;
+  }
+
+  .mat-tab-label-active {
+    color: $main-color !important;
+    font-weight: 500 !important;
+  }
+
+  td.active {
+    background-color: $main-color !important;
+  }
+
+  td {
+    .active {
+      background-color: $main-color !important;
+    }
+  }
+
+  .btn {
+    margin-left: 10px;
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .ranges ul li button.active {
+    background-color: $main-color !important;
+    color: #fff;
+  }
+
+  .date-range .btn {
+    background-color: $main-color !important;
+  }
+
+  .date-range .md-drppicker .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .btn:focus,
+  .md-drppicker .btn:hover {
+    background-color: $main-color !important;
+  }
+
+  .buttons .buttons_input .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker td.active,
+  .md-drppicker td.active:hover {
+    background-color: $main-color;
+  }
+
+  .mat-step-header .mat-step-label.mat-step-label-active {
+    color: $main-color !important;
+  }
+
+  .contract-input:focus {
+    border: $main-color solid 2.2px !important;
+    box-shadow: 0 0 10px $main-color !important;
+  }
+
+  .contract-input-error:focus {
+    border: #f44336 solid 2.5px !important;
+    // outline: none !important;
+    box-shadow: 0 0 10px #f44336 !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer {
+    background-color: $main-color !important;
+    // cursor: pointer !important;
+    width: 13px !important;
+    height: 13px !important;
+    top: -6px !important;
+    background-color: $main-color;
+    z-index: 3 !important;
+    border-radius: 16px !important;
+  }
+
+  .ng5-slider .ng5-slider-selection {
+    background: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer.ng5-slider-active:after {
+    background-color: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 4px;
+    background-color: $main-color !important;
+  }
+
+}
+
+// ///////////////////////*Red Theme*/////////////////////////////////////
+
+.redThemeClass {
+  $red-primary: mat-palette($mat-red, 900, 700, 100);
+  $red-primary-50: mat-palette($mat-red, 50);
+  $red-primary-100: mat-palette($mat-red, 100);
+  $red-primary-200: mat-palette($mat-red, 200);
+  $red-primary-500: mat-palette($mat-red, 500);
+  $red-primary-700: mat-palette($mat-red, 700);
+
+  $red-accent: mat-palette($mat-teal, 300);
+
+  $redTheme: mat-light-theme($red-primary, $red-accent, $warn);
+
+  $main-color: mat-color($red-primary);
+  $main-color-50: mat-color($red-primary-50);
+  $main-color-100: mat-color($red-primary-100);
+  $main-color-200: mat-color($red-primary-200);
+  $main-color-500: mat-color($red-primary-500);
+  $main-color-700: mat-color($red-primary-700);
+  $accent-color: mat-color($red-accent);
+  @include angular-material-theme($redTheme);
+  @include layout-theme($main-color, $main-color-700, $main-color-500, $main-color-100, $accent-color);
+  @include menu-list-item-theme($main-color, $main-color-100, $main-color-500, $main-color-700, $accent-color);
+
+  .timepicker__header {
+    background-color: $main-color !important;
+  }
+
+  .timepicker-button {
+    color: $main-color !important;
+  }
+
+  .mat-tab-label-active {
+    color: $main-color !important;
+    font-weight: 500 !important;
+  }
+
+  td.active {
+    background-color: $main-color !important;
+  }
+
+  td {
+    .active {
+      background-color: $main-color !important;
+    }
+  }
+
+  .btn {
+    margin-left: 10px;
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .ranges ul li button.active {
+    background-color: $main-color !important;
+    color: #fff;
+  }
+
+  .date-range .btn {
+    background-color: $main-color !important;
+  }
+
+  .date-range .md-drppicker .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .btn:focus,
+  .md-drppicker .btn:hover {
+    background-color: $main-color !important;
+  }
+
+  .buttons .buttons_input .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker td.active,
+  .md-drppicker td.active:hover {
+    background-color: $main-color;
+  }
+
+  .mat-step-header .mat-step-label.mat-step-label-active {
+    color: $main-color !important;
+  }
+
+  .contract-input:focus {
+    border: $main-color solid 2.2px !important;
+    box-shadow: 0 0 10px $main-color !important;
+  }
+
+  .contract-input-error:focus {
+    border: #f44336 solid 2.5px !important;
+    // outline: none !important;
+    box-shadow: 0 0 10px #f44336 !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer {
+    background-color: $main-color !important;
+    // cursor: pointer !important;
+    width: 13px !important;
+    height: 13px !important;
+    top: -6px !important;
+    background-color: $main-color;
+    z-index: 3 !important;
+    border-radius: 16px !important;
+  }
+
+  .ng5-slider .ng5-slider-selection {
+    background: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer.ng5-slider-active:after {
+    background-color: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 4px;
+    background-color: $main-color !important;
+  }
+}
+
+///////////////////////*Yellow Theme*/////////////////////////////////////
+
+.yellowThemeClass {
+  $yellow-primary: mat-palette($mat-yellow, 800, 700, 100);
+  $yellow-primary-50: mat-palette($mat-yellow, 50);
+  $yellow-primary-100: mat-palette($mat-yellow, 100);
+  $yellow-primary-200: mat-palette($mat-yellow, 200);
+  $yellow-primary-500: mat-palette($mat-yellow, 500);
+  $yellow-primary-700: mat-palette($mat-yellow, 600);
+
+  $yellow-accent: mat-palette($mat-blue, 400);
+  $yellowTheme: mat-light-theme($yellow-primary, $yellow-accent, $warn);
+
+  $main-color: mat-color($yellow-primary);
+  $main-color-50: mat-color($yellow-primary-50);
+  $main-color-100: mat-color($yellow-primary-100);
+  $main-color-200: mat-color($yellow-primary-200);
+  $main-color-500: mat-color($yellow-primary-500);
+  $main-color-700: mat-color($yellow-primary-700);
+  $accent-color: mat-color($yellow-accent);
+  @include angular-material-theme($yellowTheme);
+  @include layout-theme($main-color, $main-color-700, $main-color-500, $main-color-100, $accent-color);
+  @include menu-list-item-theme($main-color, $main-color-100, $main-color-500, $main-color-700, $accent-color);
+
+  .timepicker__header {
+    background-color: $main-color !important;
+  }
+
+  .timepicker-button {
+    color: $main-color !important;
+  }
+
+  .mat-tab-label-active {
+    color: $main-color !important;
+    font-weight: 500 !important;
+  }
+
+  td.active {
+    background-color: $main-color !important;
+  }
+
+  td {
+    .active {
+      background-color: $main-color !important;
+    }
+  }
+
+  .btn {
+    margin-left: 10px;
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .ranges ul li button.active {
+    background-color: $main-color !important;
+    color: #fff;
+  }
+
+  .date-range .btn {
+    background-color: $main-color !important;
+  }
+
+  .date-range .md-drppicker .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .btn:focus,
+  .md-drppicker .btn:hover {
+    background-color: $main-color !important;
+  }
+
+  .buttons .buttons_input .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker td.active,
+  .md-drppicker td.active:hover {
+    background-color: $main-color;
+  }
+
+  .mat-step-header .mat-step-label.mat-step-label-active {
+    color: $main-color !important;
+  }
+
+  .contract-input:focus {
+    border: $main-color solid 2.2px !important;
+    box-shadow: 0 0 10px $main-color !important;
+  }
+
+  .contract-input-error:focus {
+    border: #f44336 solid 2.5px !important;
+    // outline: none !important;
+    box-shadow: 0 0 10px #f44336 !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer {
+    background-color: $main-color !important;
+    // cursor: pointer !important;
+    width: 13px !important;
+    height: 13px !important;
+    top: -6px !important;
+    background-color: $main-color;
+    z-index: 3 !important;
+    border-radius: 16px !important;
+  }
+
+  .ng5-slider .ng5-slider-selection {
+    background: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer.ng5-slider-active:after {
+    background-color: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 4px;
+    background-color: $main-color !important;
+  }
+}
+
+// ///////////////////////*Orange Theme*/////////////////////////////////////
+.orangeThemeClass {
+  $orange-primary: mat-palette($mat-orange, 900, 700, 100);
+  $orange-primary-50: mat-palette($mat-orange, 50);
+  $orange-primary-100: mat-palette($mat-orange, 100);
+  $orange-primary-200: mat-palette($mat-orange, 200);
+  $orange-primary-500: mat-palette($mat-orange, 500);
+  $orange-primary-700: mat-palette($mat-orange, 700);
+  $orange-accent: mat-palette($mat-blue, 700);
+  $orangeTheme: mat-light-theme($orange-primary, $orange-accent, $warn);
+
+  /*Theme Colors*/
+
+  $main-color: mat-color($orange-primary);
+  $main-color-50: mat-color($orange-primary-50);
+  $main-color-100: mat-color($orange-primary-100);
+  $main-color-200: mat-color($orange-primary-200);
+  $main-color-500: mat-color($orange-primary-500);
+  $main-color-700: mat-color($orange-primary-700);
+  $accent-color: mat-color($orange-accent);
+  @include angular-material-theme($orangeTheme);
+  @include layout-theme($main-color, $main-color-700, $main-color-500, $main-color-100, $accent-color);
+  @include menu-list-item-theme($main-color, $main-color-100, $main-color-500, $main-color-700, $accent-color);
+
+  .timepicker__header {
+    background-color: $main-color !important;
+  }
+
+  .timepicker-button {
+    color: $main-color !important;
+  }
+
+  .mat-tab-label-active {
+    color: $main-color !important;
+    font-weight: 500 !important;
+  }
+
+  td.active {
+    background-color: $main-color !important;
+  }
+
+  td {
+    .active {
+      background-color: $main-color !important;
+    }
+  }
+
+  .btn {
+    margin-left: 10px;
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .ranges ul li button.active {
+    background-color: $main-color !important;
+    color: #fff;
+  }
+
+  .date-range .btn {
+    background-color: $main-color !important;
+  }
+
+  .date-range .md-drppicker .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .btn:focus,
+  .md-drppicker .btn:hover {
+    background-color: $main-color !important;
+  }
+
+  .buttons .buttons_input .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker td.active,
+  .md-drppicker td.active:hover {
+    background-color: $main-color;
+  }
+
+  .mat-step-header .mat-step-label.mat-step-label-active {
+    color: $main-color !important;
+  }
+
+  .contract-input:focus {
+    border: $main-color solid 2.2px !important;
+    box-shadow: 0 0 10px $main-color !important;
+  }
+
+  .contract-input-error:focus {
+    border: #f44336 solid 2.5px !important;
+    // outline: none !important;
+    box-shadow: 0 0 10px #f44336 !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer {
+    background-color: $main-color !important;
+    // cursor: pointer !important;
+    width: 13px !important;
+    height: 13px !important;
+    top: -6px !important;
+    background-color: $main-color;
+    z-index: 3 !important;
+    border-radius: 16px !important;
+  }
+
+  .ng5-slider .ng5-slider-selection {
+    background: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer.ng5-slider-active:after {
+    background-color: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 4px;
+    background-color: $main-color !important;
+  }
+
+}
+
+// ///////////////////////*Purple Theme*/////////////////////////////////////
+.purpleThemeClass {
+  $purple-primary: mat-palette($mat-purple, 900, 700, 100);
+  $purple-primary-50: mat-palette($mat-purple, 50);
+  $purple-primary-100: mat-palette($mat-purple, 100);
+  $purple-primary-200: mat-palette($mat-purple, 200);
+  $purple-primary-500: mat-palette($mat-purple, 500);
+  $purple-primary-700: mat-palette($mat-purple, 700);
+  $purple-accent: mat-palette($mat-green, 800);
+  $purpleTheme: mat-light-theme($purple-primary, $purple-accent, $warn);
+
+  /*Theme Colors*/
+  $main-color: mat-color($purple-primary);
+  $main-color-50: mat-color($purple-primary-50);
+  $main-color-100: mat-color($purple-primary-100);
+  $main-color-200: mat-color($purple-primary-200);
+  $main-color-500: mat-color($purple-primary-500);
+  $main-color-700: mat-color($purple-primary-700);
+  $accent-color: mat-color($purple-accent);
+
+  @include angular-material-theme($purpleTheme);
+  @include layout-theme($main-color, $main-color-700, $main-color-500, $main-color-100, $accent-color);
+  @include menu-list-item-theme($main-color, $main-color-100, $main-color-500, $main-color-700, $accent-color);
+
+  .timepicker__header {
+    background-color: $main-color !important;
+  }
+
+  .timepicker-button {
+    color: $main-color !important;
+  }
+
+  .mat-tab-label-active {
+    color: $main-color !important;
+    font-weight: 500 !important;
+  }
+
+  td.active {
+    background-color: $main-color !important;
+  }
+
+  td {
+    .active {
+      background-color: $main-color !important;
+    }
+  }
+
+  .btn {
+    margin-left: 10px;
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .ranges ul li button.active {
+    background-color: $main-color !important;
+    color: #fff;
+  }
+
+  .date-range .btn {
+    background-color: $main-color !important;
+  }
+
+  .date-range .md-drppicker .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker .btn:focus,
+  .md-drppicker .btn:hover {
+    background-color: $main-color !important;
+  }
+
+  .buttons .buttons_input .btn {
+    background-color: $main-color !important;
+  }
+
+  .md-drppicker td.active,
+  .md-drppicker td.active:hover {
+    background-color: $main-color;
+  }
+
+  .mat-step-header .mat-step-label.mat-step-label-active {
+    color: $main-color !important;
+  }
+
+  .contract-input:focus {
+    border: $main-color solid 2.2px !important;
+    box-shadow: 0 0 10px $main-color !important;
+  }
+
+  .contract-input-error:focus {
+    border: #f44336 solid 2.5px !important;
+    // outline: none !important;
+    box-shadow: 0 0 10px #f44336 !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer {
+    background-color: $main-color !important;
+    // cursor: pointer !important;
+    width: 13px !important;
+    height: 13px !important;
+    top: -6px !important;
+    background-color: $main-color;
+    z-index: 3 !important;
+    border-radius: 16px !important;
+  }
+
+  .ng5-slider .ng5-slider-selection {
+    background: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer.ng5-slider-active:after {
+    background-color: $main-color !important;
+  }
+
+  .ng5-slider .ng5-slider-pointer:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 4px;
+    background-color: $main-color !important;
+  }
+}
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+$sidebar: #fff;
+$sidebar-white: #e5edef;
+$sidebar-alt: #f2f6f8;
+$bodycolor: #eef5f9;
+$headingtext: #455a64;
+$bodytext: #67757c;
+$sidebar-text: #607d8b;
+$sidebar-icons: #99abb4;
+$sidebar-hover-icons: teal;
+
+$font-16: 16px;
+
+$light-text: #a6b7bf;
+$themecolor: #1e88e5;
+$themecolor-alt: #26c6da;
+$themecolor-dark: #028ee1;
+
+/*bootstrap Color*/
+$danger: #fc4b6c;
+$success: #26c6da;
+$warning: #ffb22b;
+$primary: #7460ee;
+$info: #1e88e5;
+$inverse: #2f3d4a;
+$muted: #99abb4;
+$dark: #263238;
+$light: #f2f4f8;
+$extra-light: #ebf3f5;
+$secondary: #727b84;
+
+/*Light colors*/
+$light-danger: #f9e7eb;
+$light-success: #e8fdf8;
+$light-warning: #fff8ec;
+$light-primary: #f1effd;
+$light-info: #e3f3fd;
+$light-inverse: #f6f6f6;
+$light-megna: #e0f2f4;
+
+$danger-dark: #e6294b;
+$success-dark: #1eacbe;
+$warning-dark: #e9ab2e;
+$primary-dark: #6352ce;
+$info-dark: #028ee1;
+$red-dark: #d61f1f;
+$inverse-dark: #232a37;
+$dark-transparent: rgba(0, 0, 0, 0.05);
+
+/*Normal Color*/
+$white: #fff;
+$red: #fb3a3a;
+$yellow: #a0aec4;
+$purple: #7460ee;
+$blue: #02bec9;
+$megna: #00897b;
+
+/*Extra Variable*/
+$rgt: right;
+$lft: left;
+$border: rgba(120, 130, 140, 0.13);
+$table-border: #f3f1f1;
+$card-brd: #d7dfe3;
+$dark-text: #848a96;
+$radius: 4px;
+$form-brd: #d9d9d9;
+
+/*Material Colors*/
+$grey-50: #FaFaFa;
+$grey-100: #F5F5F5;
+$grey-200: #EEEEEE;
+$grey-300: #E0E0E0;
+$grey-400: #BDBDBD;
+$grey-500: #9E9E9E;
+$grey-600: #757575;
+$grey-700: #616161;
+$grey-800: #424242;
+$grey-900: #212121;
+
+$red-100: #FFEBEE;
+$red-200: #FFCDD2;
+$red-300: #E57373;
+$red-400: #EF5350;
+$red-500: #F44336;
+$red-600: #E53935;
+$red-700: #D32F2F;
+$red-800: #C62828;
+$red-900: #B71C1C;
+
+$amber-100: #FFECB3;
+$amber-200: #FFE082;
+$amber-300: #FFD54F;
+$amber-400: #FFCA28;
+$amber-500: #FFC107;
+$amber-600: #FFB300;
+$amber-700: #FFA000;
+$amber-800: #FF8F00;
+$amber-900: #FF6F00;
+
+$teal-50: #e0f2f2;
+$teal-100: #B2DFDB;
+$teal-200: #80CBC4;
+$teal-300: #4DB6AC;
+$teal-400: #26A69A;
+$teal-500: #009688;
+$teal-600: #00897B;
+$teal-700: #00796B;
+$teal-800: #00695C;
+$teal-900: #004D40;
+
+$blue-50: #e3f2fd;
+$blue-100: #bbdefb;
+$blue-200: #90caf9;
+$blue-300: #64b5f6;
+$blue-400: #42a5f5;
+$blue-500: #2196f3;
+$blue-600: #1e88e5;
+$blue-700: #1976d2;
+$blue-800: #1565c0;
+$blue-900: #0d47a1;

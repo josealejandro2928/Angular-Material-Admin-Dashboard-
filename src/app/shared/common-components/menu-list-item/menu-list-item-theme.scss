@@ -1,0 +1,44 @@
+@import '~@angular/material/theming';
+
+@mixin menu-list-item-theme($primary, $primary-100, $primary-500, $primary-700, $accent) {
+
+
+  app-menu-list-item {
+
+    .mat-list-item-content {
+      width: 100% !important;
+    }
+  }
+
+  :host {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    width: 100%;
+
+    .mat-list-item.active {
+      background-color: $primary-100;
+      color: $primary;
+
+      .mat-body-1 {
+        font-weight: 600 !important;
+      }
+
+      .menu-icons {
+
+        mat-icon {
+          color: $primary !important;
+        }
+      }
+    }
+
+    &:focus {
+      >.mat-list-item:not(.expanded) {
+        background-color: $primary-100
+      }
+    }
+  }
+
+
+
+}

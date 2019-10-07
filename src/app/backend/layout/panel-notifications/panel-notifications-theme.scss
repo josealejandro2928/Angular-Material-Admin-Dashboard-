@@ -1,0 +1,28 @@
+@mixin custom-dialog-theme($theme) {
+
+  $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+
+  .mat-dialog-container {
+    padding: 0;
+    // width: 85vw !important; ///parametro ajustable
+
+    .mat-toolbar {
+      flex: 1 0 auto;
+      min-height: initial;
+    }
+
+    mat-toolbar-row {
+      background-color: mat-color($primary);
+    }
+
+    .toolbar-bottom {
+      height: auto;
+    }
+  }
+
+
+}

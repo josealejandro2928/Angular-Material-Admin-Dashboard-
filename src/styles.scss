@@ -1,0 +1,201 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import "./assets/styles/variable";
+@import "./assets/styles/mixins";
+@import "./assets/styles/pallete-colors";
+@import "./assets/styles/pallete-backgrounds";
+@import "./assets/styles/header";
+@import "./assets/styles/sidebar";
+@import "./assets/styles/helpers/helpers";
+// regular style toast
+@import "~ngx-toastr/toastr.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+
+html,
+body {
+  box-sizing: border-box;
+  height: 100% !important;
+  margin: 0;
+  font-family: Roboto !important;
+}
+
+.height-100 {
+  height: 100% !important;
+}
+
+.width-100 {
+  width: 100% !important;
+}
+
+
+
+.my-stroked-button {
+  border: solid 2px $grey-600 !important;
+
+  span {
+    color: $grey-600 !important;
+    text-transform: uppercase;
+  }
+}
+
+.mat-tab-label-container {
+  background-color: white;
+}
+
+.StrokedBTNActions {
+  color: $grey-700 !important;
+  height: 34px !important;
+  width: 34px !important;
+  min-width: 34px !important;
+  padding: 1px !important;
+}
+
+
+.cdk-overlay-pane {
+  max-width: 100vw !important;
+}
+
+.mat-expansion-panel-body {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+
+
+.fixed {
+  .mat-tab-header {
+    position: fixed;
+    top: 64px !important;
+    z-index: 10;
+    width: 100%;
+  }
+}
+
+.tab-group-full-height {
+  .mat-tab-body-wrapper {
+    height: 100% !important;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+
+  mat-sidenav-content {
+    margin-left: 0px !important;
+  }
+
+  .hideXs {
+    display: none;
+    background-color: red;
+  }
+
+  td.mat-cell:first-child,
+  td.mat-footer-cell:first-child,
+  th.mat-header-cell:first-child {
+    padding-left: 14px !important;
+  }
+
+  td.mat-cell:last-child,
+  td.mat-footer-cell:last-child,
+  th.mat-header-cell:last-child {
+    padding-right: 14px !important;
+  }
+
+  .fixed {
+    .mat-tab-header {
+      position: fixed;
+      top: 56px !important;
+      z-index: 10;
+      width: 100%;
+    }
+  }
+}
+
+.btn.btn-default {
+  background-color: $grey-100 !important;
+}
+
+.input-warning {
+  position: absolute;
+  color: $amber-700;
+  margin-top: 65px;
+}
+
+@media(max-width: 800px) {
+  .responsive_table {
+    overflow-x: auto !important;
+  }
+
+  .mat-table {
+    min-width: 550px;
+  }
+}
+
+.mat-flat-button {
+  border-radius: 4px !important;
+}
+
+.mat-flat-button {
+  border-radius: 4px !important;
+}
+
+.mat-stroked-button {
+  border-radius: 4px !important;
+}
+
+.mat-raised-button {
+  border-radius: 4px !important;
+}
+
+.star-icon[_ngcontent-c28] {
+  font-size: 12px !important;
+}
+
+// .mat-menu-panel {
+//   min-width: 112px !important;
+//   max-width: 400px !important;
+//   padding: 4px !important;
+//   overflow: auto;
+//   -webkit-overflow-scrolling: touch;
+//   max-height: calc(100vh - 48px);
+//   border-radius: 4px;
+//   outline: 0;
+// }
+
+.border-content {
+  padding: 16px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 4px;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 12px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  //background: $grey-400;
+  border: 2px solid transparent;
+  box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.37);
+  border-radius: 24px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+::-webkit-scrollbar-thumb:active {
+  box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.54);
+  border-radius: 24px;
+}

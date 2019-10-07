@@ -1,0 +1,66 @@
+@import "../../../assets/styles/variable";
+
+
+$havanatur-color:#0d47a1;
+
+.login-card {
+  border-radius: 6px !important;
+  padding: 0;
+  min-width: 450px;
+  max-width: 600px;
+
+  @media(max-width:800px) {
+    min-width: 350px !important;
+    max-width: 400px !important;
+  }
+
+  min-height: 560px !important;
+}
+
+.login-header {
+  #toolbarHeader {
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 6px !important;
+
+    #ImgLayout {
+      height: 170px;
+      width: 170px;
+      border-radius: 4px;
+      border: solid 2.5px #bbb;
+      background-image: url('../../../assets/images/logo/NoLogoAgency.png');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+
+}
+
+.mat-card-header-text {
+  margin: 0px !important;
+}
+
+.login-toolbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.login-form {
+
+  #lineUnder {
+    background-color: $havanatur-color;
+    width: 30px;
+    height: 2px;
+    border-radius: 4px;
+  }
+}
+
+.example-full-width {
+  width: 90%;
+}
+
+.login-background {
+  background: url('../../../assets/images/background/auto1.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}

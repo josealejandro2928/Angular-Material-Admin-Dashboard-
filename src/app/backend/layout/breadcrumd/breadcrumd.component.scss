@@ -1,0 +1,19 @@
+.cursor-hand {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline !important;
+    font-weight: 600 !important
+  }
+}
+
+// .cursor-hand:hover {
+//   cursor: pointer;
+
+// }
+
+.Rutas {
+  margin-top: 8px !important;
+  text-transform: capitalize !important;
+  font-size: 19px !important;
+}

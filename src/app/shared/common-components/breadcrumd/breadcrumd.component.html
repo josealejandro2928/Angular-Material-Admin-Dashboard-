@@ -1,0 +1,7 @@
+<div fxFlex="row" fxLayoutAlign="start center">
+  <span [ngClass]="{'cursor-hand': !breadcrumb.isLast}" (click)="goToLink(breadcrumb)"
+        class="color-white mat-body-1" *ngFor="let breadcrumb of breadcrumdList">
+    {{breadcrumb.text}} <strong *ngIf="!breadcrumb.isLast"
+                                style="margin-right: 3px;"> {{separator}} </strong></span>
+</div>
+

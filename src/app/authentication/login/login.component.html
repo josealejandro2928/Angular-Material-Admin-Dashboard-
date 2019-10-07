@@ -1,0 +1,56 @@
+<div fxFlexFill fxLayout="column" fxLayoutAlign="center stretch" class="login-background">
+  <div fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="login-card mat-elevation-z8" [@animate]="{value:'*',params:{duration:'850ms',y:'300px'}}">
+      <div fxLayout="column" fxFlexAlign="center center" fxFlex="100">
+
+        <div fxLayout="column" fxLayoutAlign="start stretch" class="login-header">
+          <mat-toolbar color="primary" id="toolbarHeader">
+            <mat-toolbar-row>
+            </mat-toolbar-row>
+
+            <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+              <div class="mat-elevation-z4" id="ImgLayout">
+              </div>
+            </mat-toolbar-row>
+
+            <mat-toolbar-row>
+
+            </mat-toolbar-row>
+          </mat-toolbar>
+
+        </div>
+
+        <form name="login" class="login-form">
+
+          <div fxLayout="column" class="mt-4" fxLayoutAlign="center center">
+
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Nombre de Usuario</mat-label>
+              <input matInput placeholder="Nombre de Usuario" autocomplete="off" [disabled]="inLoading"
+                [formControl]="loginForm.controls['username']" name="username">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input type="password" matInput placeholder="Contraseña" autocomplete="off" [disabled]="inLoading"
+                [formControl]="loginForm.controls['password']" name="password">
+            </mat-form-field>
+
+            <button *ngIf="!this.inLoading" mat-raised-button color="primary" [disabled]="!loginForm.valid"
+              (click)="login(loginForm.controls['username'].value, loginForm.controls['password'].value)"
+              class="cf-margin-top-20 example-full-width">INICIAR SESIÓN
+            </button>
+
+
+            <mat-spinner diameter="60" color="primary" *ngIf="this.inLoading"></mat-spinner>
+
+
+          </div>
+
+        </form>
+      </div>
+    </mat-card>
+
+  </div>
+</div>

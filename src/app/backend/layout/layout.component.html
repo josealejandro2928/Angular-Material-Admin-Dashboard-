@@ -1,0 +1,93 @@
+<ng-progress [positionUsing]="'marginLeft'" [minimum]="0.15" [maximum]="1" [speed]="200" [showSpinner]="false"
+  [direction]="'leftToRightIncreased'" color="accent" [trickleSpeed]="250" [thick]="false" [ease]="'linear'">
+</ng-progress>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="isHandset ? 'dialog' : 'navigation'"
+    [mode]="isHandset ? 'over' : 'side'" [opened]="!isHandset">
+    <mat-toolbar color="primary">
+
+      <img *ngIf="true" height="54px" src="{{'../../../../../assets/images/background/auto1.jpg"
+        onerror="this.onerror=null;this.src='../../../assets/images/logo/havanatur_transparent_logo.png';" />
+
+      <span></span>
+      <span class="mat-title AgencyTitulo">{{'Agency Name'}}</span>
+    </mat-toolbar>
+    <mat-nav-list class = "navList">
+      <app-menu-list-item *ngFor=" let item of navigationData" [item]="item"></app-menu-list-item>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="main-toolbar">
+      <mat-toolbar-row>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex.xs="100" fxFlex="78">
+          <div fxLayoutAlign="start center" fxFlex="25">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+              *ngIf="isHandset || !this.sidenav.opened">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <app-breadcrumd [separator]="separator"></app-breadcrumd>
+          </div>
+          <div fxLayout="row" style="padding-right: 16px !important; position: fixed;right: 0;"
+            fxLayoutAlign="start start">
+
+            <button mat-icon-button matTooltip="Notificaciones" (click)="onViewNotifications()">
+              <mat-icon class="mat-18">notifications</mat-icon>
+            </button>
+
+            <button mat-icon-button matTooltip="Seleccione un tema">
+              <mat-icon class="cursor-pointer" aria-label="Side nav toggle icon" [matMenuTriggerFor]="menuThemes">
+                <span>
+                  <mat-icon>format_color_fill</mat-icon>
+                </span>
+              </mat-icon>
+            </button>
+
+            <mat-menu #menuThemes="matMenu" backdropClass="MenuPanelLayoutThemes">
+              <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="gappx">
+                <div fxLayoutAlign="center center" fxFlex="30" *ngFor="let theme of this.arrayOfThemes">
+                  <button mat-menu-item (click)="onChangeTheme(theme)">
+                    <div class="mat-elevation-z4" style="height: 32px; width: 32px; border-radius: 50%;"
+                      [ngStyle]="{'background-color': theme.mainColor }">
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </mat-menu>
+
+            <button mat-icon-button matTooltip="Opciones de usuario">
+              <mat-icon class="cursor-pointer" aria-label="Side nav toggle icon" [matMenuTriggerFor]="menu">more_vert
+              </mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" class="mymegamenu">
+              <button mat-menu-item (click)="onEditUser()">
+                <mat-icon>account_box</mat-icon>
+                Mi Perfil
+              </button>
+              <button mat-menu-item (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                Salir
+              </button>
+            </mat-menu>
+
+            <img class="ImageAvatar" *ngIf="!this.loggedInUser.image" src="{{'../../../assets/images/users/user.png'}}"
+              alt="user">
+            <img class="ImageAvatar" *ngIf="this.loggedInUser.image" src="{{userUrl+loggedInUser.image}}" alt="user"
+              onerror="this.onerror=null;this.src='../../../assets/images/users/user.png';">
+
+            <div fxLayout="column" fxHide.xs style="margin-right: 0px !important;" fxLayoutAlign="start start">
+              <span class="mat-body-1"
+                style="font-size: 13px !important; color:#fafafa !important">{{loggedInUser.name}}</span>
+              <span class="mat-caption" style="color:#f5f5f5 !important">{{loggedInUser.email}}</span>
+            </div>
+          </div>
+        </div>
+      </mat-toolbar-row>
+
+    </mat-toolbar>
+
+    <!--views-->
+    <div class="MainLayoutRoutes" fxFlexFill fxLayout="column" fxLayoutAlign="start stretch">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>{{data.title}}</h2>
+
+<mat-dialog-content>
+  <span>{{data.question}}</span>
+
+  <div class="cf-margin-top-20" fxLayout="column" fxLayoutAlign="start start" *ngIf="data.settings">
+    <div>
+      <span>Recargas: </span><span>{{data.settings.runExec}}</span>
+    </div>
+    <div>
+      <span>CSQ: </span><span>{{data.settings.ccq}}</span>
+    </div>
+    <div>
+      <span>LOMBMART: </span><span>{{data.settings.lombmart}}</span>
+    </div>
+    <div>
+      <span>IBRS: </span><span>{{data.settings.ibrs}}</span>
+    </div>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions fxLayout fxLayoutAlign="space-between center">
+  <button fxFlex
+          mat-button
+          mat-dialog-close>
+    CANCELAR
+  </button>
+
+  <button fxFlex
+          color="primary"
+          mat-raised-button
+          (click)="onSave()">
+
+    <!--<mat-icon *ngIf="!isSaving">save</mat-icon>-->
+
+    <span i18n>ACEPTAR</span>
+  </button>
+</mat-dialog-actions>

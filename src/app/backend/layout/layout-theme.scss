@@ -1,0 +1,40 @@
+@import '~@angular/material/theming';
+
+@mixin layout-theme($primary, $primary-700, $primary-500, $primary-100, $accent) {
+
+  app-layout {
+
+    .active-link {
+      background-color: $primary-100 !important;
+
+      .mat-list-item-content {
+        color: $primary !important;
+
+        span {
+          color: $primary !important;
+          font-weight: 500 !important
+        }
+
+        .mat-icon {
+          color: $primary;
+        }
+      }
+    }
+
+    .activeContractNav {
+      background-color: $primary-100 !important;
+
+
+      span {
+        color: $primary !important;
+      }
+
+      .mat-icon {
+        color: $primary;
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,96 @@
+@import "../../../assets/styles/variable";
+@import "../../../assets/styles/pallete-colors";
+
+
+
+app-layout {
+  .sidenav-container {
+    height: 100%;
+    perspective: 500px;
+  }
+
+  .AgencyTitulo {
+    margin-bottom: 0px !important;
+    margin-left: 10px !important;
+  }
+
+  .user-profile {
+    width: 100%;
+  }
+
+  .ImageAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  .sidenav {
+    width: 300px;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, .24);
+  }
+
+  @media only screen and (max-width: 480px) {
+    mat-toolbar {
+      height: 64px !important;
+    }
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+
+  .mat-list-item {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+
+    .mat-icon {
+      margin-right: 20px;
+    }
+
+    .menu-icon {
+      color: #757575;
+    }
+  }
+
+
+
+  .navList {
+    margin-top: 16px !important;
+    max-height: 85vh !important;
+    overflow: auto;
+  }
+
+  .icon-arrow {
+    margin-left: 45% !important;
+    margin-right: 0px !important;
+  }
+
+  .MainLayoutRoutes {
+    padding-top: 66px !important;
+  }
+
+  .gj-side-img {
+    height: 52px;
+  }
+
+  .main-toolbar {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+  }
+
+}
+
+.MenuPanelLayoutThemes+* .mat-menu-panel {
+  min-width: 112px !important;
+  max-width: 190px !important;
+  padding: 2px 8px !important;
+
+  .mat-menu-item {
+    padding: 8px !important;
+  }
+
+}
