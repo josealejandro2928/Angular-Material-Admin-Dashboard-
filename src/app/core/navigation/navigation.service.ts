@@ -16,7 +16,7 @@ export class NavigationService {
     {
       displayName: 'SAMPLE1',
       iconName: ['search'],
-      route: 'backend-hotels/backend-search',
+      route: 'backend/sample1',
       material: true,
       children: []
     },

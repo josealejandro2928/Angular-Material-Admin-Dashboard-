@@ -1,6 +1,13 @@
 @import "../../../assets/styles/variable";
 
 
+:host {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+
+
 $havanatur-color:#0d47a1;
 
 .login-card {

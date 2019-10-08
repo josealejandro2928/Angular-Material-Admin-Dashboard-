@@ -4,6 +4,7 @@ import { SplashScreenService } from './core/splash-screen/splash-screen.service'
 import { ThemeConfigurationService } from './theme-configuration.service';
 import { environment } from './../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
+import { PreviousRouteService } from './core/previous-route/previous-route.service';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent {
   title = 'app';
 
   constructor(private _splashScreenService: SplashScreenService,
+    private previousRouteService: PreviousRouteService,
     private translate: TranslateService,
     public themeConfigService: ThemeConfigurationService) {
 

@@ -2,5 +2,9 @@
 	"SAMPLE":"Sample",
 	"SAMPLE1":"Sample 1",
 	"SAMPLE2":"Sample 2",
-	"CATEGORY":"Category"
+	"CATEGORY":"Category",
+	"User options":"User options",
+	"Select a theme":"Select a theme",
+	"Notifications":"Notifications",
+	"Change language":"Change language"
 }

@@ -4,6 +4,13 @@
 
 
 app-layout {
+
+  :host {
+    height: 100% !important;
+    width: 100% !important;
+    // overflow-y: hidden !important;
+  }
+
   .sidenav-container {
     height: 100%;
     perspective: 500px;
@@ -70,6 +77,8 @@ app-layout {
 
   .MainLayoutRoutes {
     padding-top: 66px !important;
+    height: 100% !important;
+    width: 100% !important;
   }
 
   .gj-side-img {

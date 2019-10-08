@@ -4,19 +4,14 @@ import { SampleComponent } from './sample/sample.component';
 import { SampleRoutingModule } from './sample-routing.module';
 
 // --------- COMMON MODULES TO ALL APP ----------
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { FlexModule } from '@angular/flex-layout';
-import { MaterialComponentsModule } from '../shared/material-components/material-components.module';
+import { ThemeCommonModulesModule } from 'src/app/shared/theme-common-modules/theme-common-modules.module';
 // ----------------------------------------------
 
 @NgModule({
   imports: [
     CommonModule,
     SampleRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
-    FlexModule,
-    MaterialComponentsModule
+    ThemeCommonModulesModule
   ],
   declarations: [SampleComponent]
 })

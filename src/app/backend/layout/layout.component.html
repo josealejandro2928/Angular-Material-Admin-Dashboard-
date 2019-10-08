@@ -1,5 +1,5 @@
-<ng-progress [positionUsing]="'marginLeft'" [minimum]="0.15" [maximum]="1" [speed]="200" [showSpinner]="false"
-  [direction]="'leftToRightIncreased'" color="accent" [trickleSpeed]="250" [thick]="false" [ease]="'linear'">
+<ng-progress [positionUsing]="'marginLeft'" [minimum]="0.15" [maximum]="1" [speed]="200" [showSpinner]="true"
+  [direction]="'leftToRightIncreased'" color="#ffc107" [trickleSpeed]="250" [thick]="false" [ease]="'linear'">
 </ng-progress>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="isHandset ? 'dialog' : 'navigation'"
@@ -12,7 +12,7 @@
       <span></span>
       <span class="mat-title AgencyTitulo">{{'Agency Name'}}</span>
     </mat-toolbar>
-    <mat-nav-list class = "navList">
+    <mat-nav-list class = " navList">
       <app-menu-list-item *ngFor=" let item of navigationData" [item]="item"></app-menu-list-item>
       </mat-nav-list>
   </mat-sidenav>
@@ -30,11 +30,35 @@
           <div fxLayout="row" style="padding-right: 16px !important; position: fixed;right: 0;"
             fxLayoutAlign="start start">
 
-            <button mat-icon-button matTooltip="Notificaciones" (click)="onViewNotifications()">
+            <button class="mx-1" mat-icon-button [matMenuTriggerFor]="menuLanguage"
+              matTooltip="{{'Change language'|translate}}">
+              <img *ngIf="this.language === 'en'" width="25" style="border-radius: 50%;"
+                src="../../../assets/images/lang/en.svg">
+              <img *ngIf="this.language === 'es'" width="25" style="border-radius: 50%;"
+                src="../../../assets/images/lang/es.svg">
+            </button>
+            <mat-menu #menuLanguage="matMenu">
+
+              <button mat-menu-item *ngIf="this.language !== 'en'" (click)="onSwitchLanguage('en')">
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex class="px-2">
+                  <img width="25" src="../../../assets/images/lang/en.svg">
+                  <span class="ml-2">English</span>
+                </div>
+              </button>
+              <button mat-menu-item *ngIf="this.language !== 'es'" (click)="onSwitchLanguage('es')">
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex class="px-2">
+                  <img width="25" src="../../../assets/images/lang/es.svg">
+                  <span class="ml-2">Español</span>
+                </div>
+              </button>
+            </mat-menu>
+
+            <button class="mx-1" mat-icon-button matTooltip="{{'Notifications'|translate}}"
+              (click)="onViewNotifications()">
               <mat-icon class="mat-18">notifications</mat-icon>
             </button>
 
-            <button mat-icon-button matTooltip="Seleccione un tema">
+            <button class="mx-1" mat-icon-button matTooltip="{{'Select a theme'|translate}}">
               <mat-icon class="cursor-pointer" aria-label="Side nav toggle icon" [matMenuTriggerFor]="menuThemes">
                 <span>
                   <mat-icon>format_color_fill</mat-icon>
@@ -42,7 +66,7 @@
               </mat-icon>
             </button>
 
-            <mat-menu #menuThemes="matMenu" backdropClass="MenuPanelLayoutThemes">
+            <mat-menu class="mx-1" #menuThemes="matMenu" backdropClass="MenuPanelLayoutThemes">
               <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="gappx">
                 <div fxLayoutAlign="center center" fxFlex="30" *ngFor="let theme of this.arrayOfThemes">
                   <button mat-menu-item (click)="onChangeTheme(theme)">
@@ -54,7 +78,7 @@
               </div>
             </mat-menu>
 
-            <button mat-icon-button matTooltip="Opciones de usuario">
+            <button mat-icon-button matTooltip="{{'User options'|translate}}">
               <mat-icon class="cursor-pointer" aria-label="Side nav toggle icon" [matMenuTriggerFor]="menu">more_vert
               </mat-icon>
             </button>

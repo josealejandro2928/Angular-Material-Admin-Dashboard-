@@ -5,7 +5,7 @@
 @import "./assets/styles/pallete-colors";
 @import "./assets/styles/pallete-backgrounds";
 @import "./assets/styles/header";
-@import "./assets/styles/sidebar";
+// @import "./assets/styles/sidebar";
 @import "./assets/styles/helpers/helpers";
 // regular style toast
 @import "~ngx-toastr/toastr.css";
@@ -16,6 +16,7 @@ html,
 body {
   box-sizing: border-box;
   height: 100% !important;
+  width: 100% !important;
   margin: 0;
   font-family: Roboto !important;
 }
@@ -165,7 +166,7 @@ body {
 
 .border-content {
   padding: 16px;
-  border: 1px solid rgba(0,0,0,.125);
+  border: 1px solid rgba(0, 0, 0, .125);
   border-radius: 4px;
 }
 

@@ -1,8 +1,13 @@
-import { Component, HostBinding, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, Input, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { NavItem } from '../../../core/classes/navItem.class';
 import { Router } from '@angular/router';
-import { NavService } from '../nav.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { NavService } from '../nav.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { NgProgress } from 'ngx-progressbar';
+import { PreviousRouteService } from 'src/app/core/previous-route/previous-route.service';
+
 
 
 @Component({
@@ -19,36 +24,54 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     ])
   ]
 })
-export class MenuListItemComponent implements OnInit {
+export class MenuListItemComponent implements OnInit, OnDestroy {
   expanded: boolean;
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
   @Input() item: NavItem;
   @Input() depth: number;
 
+  _unsubscribeAll: Subject<any>;
+
   constructor(public navService: NavService,
+    public previousRouteService: PreviousRouteService,
+    public ngProgress: NgProgress,
     public router: Router) {
+
     if (this.depth === undefined) {
       this.depth = 0;
     }
+    this._unsubscribeAll = new Subject<any>();
   }
 
   ngOnInit() {
-    this.navService.currentUrl.subscribe((url: string) => {
+    this.navService.currentUrl.pipe(takeUntil(this._unsubscribeAll)).subscribe((url: string) => {
       if (this.item.route && url) {
-        // console.log(`Checking '/${this.item.route}' against '${url}'`);
         this.expanded = url.indexOf(`/${this.item.route}`) === 0;
         this.ariaExpanded = this.expanded;
-        // console.log(`${this.item.route} is expanded: ${this.expanded}`);
+        this.ngProgress.done();
       }
     });
   }
 
+  ngOnDestroy(): void {
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
+  }
+
   onItemSelected(item: NavItem) {
     if (!item.children || !item.children.length) {
-      this.router.navigate([item.route]);
-      if (window.innerWidth < 850) {
-        this.navService.closeNav();
+      let currentUrl = '';
+      let itemUrl = '';
+      this.previousRouteService.getCurrentUrl().split('/').map((item) => {
+        currentUrl += item.trim().toLowerCase();
+      });
+      item.route.split('/').map((item) => {
+        itemUrl += item.trim().toLowerCase();
+      });
+      if (currentUrl !== itemUrl) {
+        this.ngProgress.start();
       }
+      this.router.navigate([item.route]);
     }
     if (item.children && item.children.length) {
       this.expanded = !this.expanded;

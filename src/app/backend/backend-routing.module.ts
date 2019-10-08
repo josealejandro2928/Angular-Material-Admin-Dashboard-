@@ -9,8 +9,12 @@ const routes: Routes = [
     children: [
       {
         path: 'sample',
-        loadChildren: './../sample/sample.module#SampleModule',
+        loadChildren: '../appPages/sample/sample.module#SampleModule',
       },
+      {
+        path: 'sample1',
+        loadChildren: '../appPages/sample2/sample2.module#Sample2Module',
+      }
     ]
   },
   {
