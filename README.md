@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
-It is an example of an administration view project. It is based on angular material components and the use of flex-layout.
+It is an example of an admin dashboard project. It is based on angular material components and the use of flex-layout.
 
 ## Development server
 
