@@ -48,7 +48,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   arrayOfThemes: Theme[] = [];
   language: string;
 
-  @ViewChild('drawer')
+  @ViewChild('drawer', { static: true })
   public sidenav: MatSidenav;
   navigationData: any[] = [];
 
