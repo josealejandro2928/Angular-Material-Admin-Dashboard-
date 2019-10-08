@@ -2,7 +2,8 @@ import { IUser } from '../../../core/classes/user.class';;
 import { ShowToastrService } from '../../../core/ShowToastr/show-toastr.service';
 import { LoggedInUserService } from '../../../core/loggedInUser/logged-in-user.service';
 import { Component, Inject, HostListener, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatStepper, MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatStepper } from '@angular/material/stepper';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UrlImageService } from '../../../core/image-url/url-image.service';
 
