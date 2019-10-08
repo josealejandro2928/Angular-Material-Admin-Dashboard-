@@ -9,11 +9,11 @@ const routes: Routes = [
     children: [
       {
         path: 'sample',
-        loadChildren: '../appPages/sample/sample.module#SampleModule',
+        loadChildren: () => import('../appPages/sample/sample.module').then(m => m.SampleModule),
       },
       {
         path: 'sample1',
-        loadChildren: '../appPages/sample2/sample2.module#Sample2Module',
+        loadChildren: () => import('../appPages/sample2/sample2.module').then(m => m.Sample2Module),
       }
     ]
   },

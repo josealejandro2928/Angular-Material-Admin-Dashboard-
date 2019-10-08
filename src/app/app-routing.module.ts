@@ -16,17 +16,17 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: '../app/authentication/authentication.module#AuthenticationModule',
+        loadChildren: () => import('../app/authentication/authentication.module').then(m => m.AuthenticationModule),
         canActivate: [AuthenticationGuard]
       },
       {
         path: 'auth',
-        loadChildren: '../app/authentication/authentication.module#AuthenticationModule',
+        loadChildren: () => import('../app/authentication/authentication.module').then(m => m.AuthenticationModule),
         canActivate: [AuthenticationGuard]
       },
       {
         path: 'backend',
-        loadChildren: '../app/backend/backend.module#BackendModule',
+        loadChildren: () => import('../app/backend/backend.module').then(m => m.BackendModule),
       }
     ]
   },
