@@ -27,7 +27,7 @@
             </button>
             <app-breadcrumd [separator]="separator"></app-breadcrumd>
           </div>
-          <div fxLayout="row" style="padding-right: 16px !important; position: fixed;right: 0;"
+          <div fxLayout="row" fxLayoutAlign="start center" class="pr-4" style="position: fixed;right: 0;"
             fxLayoutAlign="start start">
 
             <button class="mx-1" mat-icon-button [matMenuTriggerFor]="menuLanguage"
@@ -83,7 +83,7 @@
               </mat-icon>
             </button>
             <mat-menu #menu="matMenu" class="mymegamenu">
-              <button mat-menu-item (click)="onEditUser()">
+              <button mat-menu-item (click)="onEditProfile()">
                 <mat-icon>account_box</mat-icon>
                 Mi Perfil
               </button>
@@ -93,10 +93,13 @@
               </button>
             </mat-menu>
 
-            <img class="ImageAvatar" *ngIf="!this.loggedInUser.image" src="{{'../../../assets/images/users/user.png'}}"
-              alt="user">
-            <img class="ImageAvatar" *ngIf="this.loggedInUser.image" src="{{userUrl+loggedInUser.image}}" alt="user"
-              onerror="this.onerror=null;this.src='../../../assets/images/users/user.png';">
+            <div fxLayout="row" class="py-1" fxLayoutAlign="start center">
+              <img class="ImageAvatar" *ngIf="!this.loggedInUser.image"
+                src="{{'../../../assets/images/users/user.png'}}" alt="user">
+              <img class="ImageAvatar" *ngIf="this.loggedInUser.image" src="{{userUrl+loggedInUser.image}}" alt="user"
+                onerror="this.onerror=null;this.src='../../../assets/images/users/user.png';">
+            </div>
+
 
             <div fxLayout="column" fxHide.xs style="margin-right: 0px !important;" fxLayoutAlign="start start">
               <span class="mat-body-1"

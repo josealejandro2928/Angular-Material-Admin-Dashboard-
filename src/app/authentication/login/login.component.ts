@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   inLoading = false;
   arrayOfThemes: Theme[] = [];
+  passwordType = 'password';
 
   ngOnInit() {
   }

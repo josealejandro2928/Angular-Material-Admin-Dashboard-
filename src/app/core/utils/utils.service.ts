@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { formatNumber, parseNumber, isValidNumber } from 'libphonenumber-js';
+import { DomSanitizer } from '@angular/platform-browser';
+
 @Injectable({
   providedIn: 'root'
 })
 export class UtilsService {
-  constructor() {
+  constructor(public sanitizer: DomSanitizer) {
   }
 
   toTitleCase(str) {
@@ -43,6 +45,10 @@ export class UtilsService {
     const year = date.getFullYear();
 
     return day + ' ' + monthNames[monthIndex] + ' ' + year;
+  }
+
+  getSafeImage(url: string) {
+    return this.sanitizer.bypassSecurityTrustStyle(`url(${url})`);
   }
 
 

@@ -1,6 +1,5 @@
 
 import { Theme } from './../../theme-configuration.service';
-import { PanelNotificationsComponent } from './panel-notifications/panel-notifications.component';
 import { Component, ViewChild, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
 import {
   BreakpointObserver,
@@ -22,6 +21,8 @@ import { ThemeConfigurationService } from 'src/app/theme-configuration.service';
 import { ShowToastrService } from 'src/app/core/ShowToastr/show-toastr.service';
 import { NavigationService } from 'src/app/core/navigation/navigation.service';
 import { TranslateService } from '@ngx-translate/core';
+import { PanelNotificationsComponent } from './panel-notifications/panel-notifications.component';
+import { EditProfileComponent } from 'src/app/shared/common-components/edit-profile/edit-profile.component';
 
 @Component({
   selector: 'app-layout',
@@ -119,10 +120,6 @@ export class LayoutComponent implements OnInit, OnDestroy {
     }
   }
 
-  onEditUser(): void {
-
-  }
-
   ngOnInit() {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth > 600) {
@@ -173,8 +170,27 @@ export class LayoutComponent implements OnInit, OnDestroy {
         // this.onRefreshData();
       }
     });
-
   }
+
+
+  /////// Edit Profile /////
+  onEditProfile(): void {
+    let dialogRef: MatDialogRef<EditProfileComponent, any>;
+    dialogRef = this.dialog.open(EditProfileComponent, {
+      panelClass: 'app-edit-profile',
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      data: {
+
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+      }
+    });
+  }
+
 
   ///////THeming Changes /////
   onChangeTheme(theme: Theme): void {

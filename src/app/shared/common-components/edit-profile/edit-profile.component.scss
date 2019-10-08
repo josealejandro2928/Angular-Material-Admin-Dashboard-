@@ -1,0 +1,85 @@
+.app-edit-profile {
+
+  #toolbarHeader {
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 6px !important;
+
+    #ImgLayout {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      border: solid 2.0px #bbb;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  .mat-dialog-container {
+    padding: 0;
+    // width: 85vw !important; ///parametro ajustable
+
+    .mat-toolbar {
+      flex: 1 0 auto;
+      min-height: initial;
+    }
+
+
+    .toolbar-bottom {
+      height: auto;
+    }
+  }
+
+  .dialog-content-wrapper {
+    max-height: 98vh;
+    max-width: 95vw;
+    width: 32vw;
+    display: flex;
+    flex-direction: column;
+    width: 50vw !important;
+
+    @media (min-width: 768px) and (max-width: 1980px) {
+      width: 12cm !important;
+
+    }
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      width: 95vw !important;
+    }
+
+  }
+
+  .cdk-overlay-pane {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  @media(max-width: 1000px) {
+    .cdk-overlay-pane {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .mat-dialog-actions {
+    padding: 16px 16px;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 0px !important;
+    background: #fafafa;
+  }
+
+  .my-dialog-content {
+    padding: 16px !important;
+    background: #fafafa;
+    margin: 0px !important;
+  }
+
+  .mat-dialog-content {
+    display: block;
+    // margin: 0 -24px;
+    // padding: 0 24px;
+    max-height: 76vh;
+    overflow: auto;
+  }
+}

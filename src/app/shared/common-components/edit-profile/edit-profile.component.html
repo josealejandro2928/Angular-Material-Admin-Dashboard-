@@ -1,0 +1,77 @@
+<div class="dialog-content-wrapper">
+  <!-- <mat-toolbar color="primary">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="center">
+      <mat-icon>notifications</mat-icon>
+      <span class="title dialog-title">Notificaciones</span>
+      <button mat-icon-button (click)="dialogRef.close()" aria-label="Close dialog">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar> -->
+
+  <mat-toolbar matDialogTitle color="primary" id="toolbarHeader">
+    <mat-toolbar-row fxLayoutAlign="end center">
+      <button mat-icon-button (click)="dialogRef.close()" aria-label="Close dialog">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+      <div class="mat-elevation-z4" id="ImgLayout"
+        [style.background-image]="this.utilsService.getSafeImage('../../../../assets/images/users/avatar-default.png')">
+      </div>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div mat-dialog-content class="my-dialog-content">
+
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="gappx">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'username'|translate}}</mat-label>
+        <input type="text" matInput placeholder="{{'username'|translate}}">
+        <mat-icon matSuffix>account_circle</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{'name'|translate}}</mat-label>
+        <input type="text" matInput placeholder="{{'name'|translate}}">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{'latname'|translate}}</mat-label>
+        <input type="text" matInput placeholder="{{'latname'|translate}}">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{'email'|translate}}</mat-label>
+        <input type="email" matInput placeholder="{{'email'|translate}}">
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="gappx">
+        <mat-form-field fxFlex="100" appearance="outline">
+          <mat-label>{{'password'|translate}}</mat-label>
+          <input [type]="this.passwordType" matInput placeholder="{{'password'|translate}}">
+          <button *ngIf="this.passwordType == 'password'" mat-icon-button matSuffix
+            (click)="this.passwordType = 'text'">
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button *ngIf="this.passwordType == 'text'" mat-icon-button matSuffix
+            (click)="this.passwordType = 'password'">
+            <mat-icon>visibility_off</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div mat-dialog-actions fxLayout="row" fxLayoutAlign="end start">
+    <button mat-flat-button color="primary">{{'Save'|translate}}</button>
+
+  </div>
+
+</div>

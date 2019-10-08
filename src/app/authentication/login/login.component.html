@@ -33,8 +33,16 @@
 
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Contraseña</mat-label>
-              <input type="password" matInput placeholder="Contraseña" autocomplete="off" [disabled]="inLoading"
+              <input [type]="this.passwordType" matInput placeholder="Contraseña" autocomplete="off" [disabled]="inLoading"
                 [formControl]="loginForm.controls['password']" name="password">
+              <button *ngIf="this.passwordType == 'password'" mat-icon-button matSuffix
+                (click)="this.passwordType = 'text'">
+                <mat-icon>visibility</mat-icon>
+              </button>
+              <button *ngIf="this.passwordType == 'text'" mat-icon-button matSuffix
+                (click)="this.passwordType = 'password'">
+                <mat-icon>visibility_off</mat-icon>
+              </button>
             </mat-form-field>
 
             <button *ngIf="!this.inLoading" mat-raised-button color="primary" [disabled]="!loginForm.valid"
