@@ -1,7 +1,8 @@
 <div fxHide.xs fxFlex="row" fxLayoutAlign="start center">
   <div class="cf-margin-top-5" *ngFor="let breadcrumb of breadcrumdList">
-    <span class="mat-body-2 Rutas" [ngClass]="{'cursor-hand': (!breadcrumb.isLast && breadcrumb.link)}" (click)="goToLink(breadcrumb)">
-      {{breadcrumb.text}}</span>
+    <span class="mat-body-2 Rutas" [ngClass]="{'cursor-hand': (!breadcrumb.isLast && breadcrumb.link)}"
+      (click)="goToLink(breadcrumb)">
+      {{breadcrumb.text|translate}}</span>
     <span class="mat-body-2 Rutas" *ngIf="!breadcrumb.isLast">
       <strong style="margin-right: 4px;"> {{separator}} </strong>
     </span>

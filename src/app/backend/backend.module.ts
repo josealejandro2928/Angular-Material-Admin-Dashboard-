@@ -7,6 +7,8 @@ import { NgProgressModule } from 'ngx-progressbar';
 import { PanelNotificationsComponent } from './layout/panel-notifications/panel-notifications.component';
 import { ThemeCommonModulesModule } from '../shared/theme-common-modules/theme-common-modules.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { BreadcrumbService } from './layout/breadcrumd/service/breadcrumb.service';
+import { BreadcrumdComponent } from './layout/breadcrumd/breadcrumd.component';
 
 @NgModule({
   imports: [
@@ -19,11 +21,13 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
   declarations: [
     LayoutComponent,
-    PanelNotificationsComponent
+    PanelNotificationsComponent,
+    BreadcrumdComponent
   ],
   entryComponents: [
     PanelNotificationsComponent
-  ]
+  ],
+  providers: [BreadcrumbService]
 
 
 })

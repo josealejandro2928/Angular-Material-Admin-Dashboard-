@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BreadcrumbService } from 'src/app/backend/layout/breadcrumd/service/breadcrumb.service';
 
 @Component({
   selector: 'app-sample2',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Sample2Component implements OnInit {
 
-  constructor() { }
+  constructor(private breadcrumbService: BreadcrumbService) { }
 
   ngOnInit() {
+    this.breadcrumbService.clearBreadcrumd();
+    this.breadcrumbService.setBreadcrumd('SAMPLE1', true);
   }
 
 }
