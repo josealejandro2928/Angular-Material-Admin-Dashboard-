@@ -42,8 +42,8 @@ export class LayoutComponent implements OnInit, OnDestroy {
   isHandset = false;
   navBarQuerySubscription: Subscription;
   navRouterSubscription: Subscription;
-  userUpdated: Subscription;
-  routeChange: Subscription;
+  userUpdatedSubscription: Subscription;
+  routeChangeSubscrition: Subscription;
   isSmallDevice: boolean;
   arrayOfThemes: Theme[] = [];
   language: string;
@@ -95,7 +95,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
           const TimeCloseSid = setTimeout(() => {
             this.sidenav.close();
             clearTimeout(TimeCloseSid);
-          }, 200);
+          }, 250);
         }
       }
     });
@@ -131,7 +131,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
       this.applyStyle = true;
     }
 
-    this.userUpdated = this.loggedInUserService.loggedInUserUpdated.subscribe(data => {
+    this.userUpdatedSubscription = this.loggedInUserService.loggedInUserUpdated.subscribe(() => {
       this.loggedInUser = this.loggedInUserService.getLoggedInUser();
       this.themeConfigService.selectedTheme = this.arrayOfThemes[0];
       document.getElementById('BodyAppClass').className = this.themeConfigService.selectedTheme.className;
@@ -146,11 +146,11 @@ export class LayoutComponent implements OnInit, OnDestroy {
     if (this.navRouterSubscription) {
       this.navRouterSubscription.unsubscribe();
     }
-    if (this.routeChange) {
-      this.routeChange.unsubscribe();
+    if (this.routeChangeSubscrition) {
+      this.routeChangeSubscrition.unsubscribe();
     }
-    if (this.userUpdated) {
-      this.userUpdated.unsubscribe();
+    if (this.userUpdatedSubscription) {
+      this.userUpdatedSubscription.unsubscribe();
     }
 
   }

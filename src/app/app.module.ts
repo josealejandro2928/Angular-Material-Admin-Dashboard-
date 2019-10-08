@@ -31,7 +31,7 @@ registerLocaleData(localeEs, 'es');
     CoreModule,
     NgProgressModule,
     ToastrModule.forRoot(),
-    NgxMaterialTimepickerModule.forRoot(),
+    NgxMaterialTimepickerModule,
     BrowserAnimationsModule,
     LayoutModule,
     AppRoutingModule,
