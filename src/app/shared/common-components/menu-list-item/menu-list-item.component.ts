@@ -48,7 +48,10 @@ export class MenuListItemComponent implements OnInit, OnDestroy {
       if (this.item.route && url) {
         this.expanded = url.indexOf(`/${this.item.route}`) === 0;
         this.ariaExpanded = this.expanded;
-        this.ngProgress.done();
+        if (this.compareUrl(this.item.route, url)) {
+          this.ngProgress.done();
+        }
+
       }
     });
   }
@@ -60,15 +63,9 @@ export class MenuListItemComponent implements OnInit, OnDestroy {
 
   onItemSelected(item: NavItem) {
     if (!item.children || !item.children.length) {
-      let currentUrl = '';
-      let itemUrl = '';
-      this.previousRouteService.getCurrentUrl().split('/').map((item) => {
-        currentUrl += item.trim().toLowerCase();
-      });
-      item.route.split('/').map((item) => {
-        itemUrl += item.trim().toLowerCase();
-      });
-      if (currentUrl !== itemUrl) {
+      const currentUrl = this.previousRouteService.getCurrentUrl();
+      const itemUrl = item.route;
+      if (!this.compareUrl(itemUrl, currentUrl)) {
         this.ngProgress.start();
       }
       this.router.navigate([item.route]);
@@ -77,5 +74,18 @@ export class MenuListItemComponent implements OnInit, OnDestroy {
       this.expanded = !this.expanded;
     }
   }
+
+  public compareUrl(itemUrl, navUrl): boolean {
+    let a = '';
+    let b = '';
+    itemUrl.split('/').map((item) => {
+      a += item.trim().toLowerCase();
+    });
+    navUrl.split('/').map((item) => {
+      b += item.trim().toLowerCase();
+    });
+    return a === b;
+  }
+
 }
 
