@@ -68,7 +68,7 @@
   </div>
 
   <div mat-dialog-actions fxLayout="row" fxLayoutAlign="end start">
-    <button mat-flat-button color="primary">{{'Save'|translate}}</button>
+    <button mat-flat-button (click)="this.dialogRef.close()" color="primary">{{'Save'|translate}}</button>
 
   </div>
 

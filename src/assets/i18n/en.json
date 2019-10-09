@@ -6,5 +6,11 @@
 	"User options":"User options",
 	"Select a theme":"Select a theme",
 	"Notifications":"Notifications",
-	"Change language":"Change language"
+	"Change language":"Change language",
+	"username":"username",
+	"name":"name",
+	"latname":"latname",
+	"email":"email",
+	"password":"password"
+
 }

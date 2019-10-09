@@ -6,5 +6,10 @@
   "User options":"Opciones del usuario",
   "Select a theme":"Seleccione un tema",
   "Notifications":"Notificaciones",
-  "Change language":"Cambie el lenguaje"
+  "Change language":"Cambie el lenguaje",
+  "username":"nombre de usuario",
+	"name":"nombre",
+	"latname":"apellidos",
+	"email":"correo",
+	"password":"contraseña"
 }

@@ -1,8 +1,11 @@
 <div class="dialog-content-wrapper">
   <mat-toolbar color="primary" matDialogTitle>
     <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
-      <mat-icon>notifications</mat-icon>
-      <span class="title dialog-title">Notificaciones</span>
+      <div fxLayoutAlign="start center">
+        <mat-icon>notifications</mat-icon>
+        <span class="mat-titile mb-0 ml-2">{{'Notifications'|translate}}</span>
+      </div>
+
       <button mat-icon-button (click)="dialogRef.close()" aria-label="Close dialog">
         <mat-icon>close</mat-icon>
       </button>
