@@ -11,5 +11,10 @@
 	"name":"nombre",
 	"latname":"apellidos",
 	"email":"correo",
-	"password":"contraseña"
+  "password":"contraseña",
+  "path":"ruta",
+	"path1":"ruta1",
+	"path2":"ruta2",
+  "path3":"ruta3",
+  "Agency Name":"Nomb. de Agencia"
 }

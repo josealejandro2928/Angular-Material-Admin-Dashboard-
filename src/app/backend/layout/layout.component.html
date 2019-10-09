@@ -4,17 +4,22 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="isHandset ? 'dialog' : 'navigation'"
     [mode]="isHandset ? 'over' : 'side'" [opened]="!isHandset">
-    <mat-toolbar color="primary">
 
-      <img *ngIf="true" height="54px" src="{{'../../../../../assets/images/background/auto1.jpg"
-        onerror="this.onerror=null;this.src='../../../assets/images/logo/havanatur_transparent_logo.png';" />
-
-      <span></span>
-      <span class="mat-title AgencyTitulo">{{'Agency Name'}}</span>
+    <mat-toolbar id="toolbarAgencyLogo" color="primary">
+      <div fxLayout="row" class="w-100" fxLayoutAlign="start center" fxLayoutGap="gappx">
+        <div fxFlex="30" fxLayoutAlign="start center">
+          <img *ngIf="true" height="54px" src="{{'../../../../../assets/images/background/loadingBackground.jpg"
+            onerror="this.onerror=null;this.src='../../../assets/images/logo/havanatur_transparent_logo.png';" />
+        </div>
+        <div fxLayout="column"  fxFlex="70" fxLayoutAlign="start center" fxLayoutGap="gappx">
+            <span class="mat-title mb-0">{{'Agency Name'|translate}}</span>
+        </div>
+      </div>
     </mat-toolbar>
+
     <mat-nav-list class = " navList">
-      <app-menu-list-item *ngFor=" let item of navigationData" [item]="item"></app-menu-list-item>
-      </mat-nav-list>
+          <app-menu-list-item *ngFor=" let item of navigationData" [item]="item"></app-menu-list-item>
+          </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="main-toolbar">

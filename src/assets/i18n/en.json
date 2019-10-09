@@ -11,6 +11,11 @@
 	"name":"name",
 	"latname":"latname",
 	"email":"email",
-	"password":"password"
+	"password":"password",
+	"path":"path",
+	"path1":"path1",
+	"path2":"path2",
+	"path3":"path3",
+	"Agency Name":"Agency Name"
 
 }

@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
         email: "jalejandro2928@gmail.com"
       }
     );
-    this.router.navigate(['backend/sample']);
+    this.router.navigate(['backend/path1']);
     return false;
   }
 

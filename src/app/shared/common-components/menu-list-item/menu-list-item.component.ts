@@ -30,6 +30,8 @@ export class MenuListItemComponent implements OnInit, OnDestroy {
   @Input() item: NavItem;
   @Input() depth: number;
 
+  isChildOfMeFlag = false;
+
   _unsubscribeAll: Subject<any>;
 
   constructor(public navService: NavService,
@@ -46,7 +48,9 @@ export class MenuListItemComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.navService.currentUrl.pipe(takeUntil(this._unsubscribeAll)).subscribe((url: string) => {
       if (this.item.route && url) {
-        this.expanded = url.indexOf(`/${this.item.route}`) === 0;
+        this.isChildOfMeFlag = false;
+        this.isRuteChildofMy(this.item, url);
+        this.expanded = this.isChildOfMeFlag;
         this.ariaExpanded = this.expanded;
         if (this.compareUrl(this.item.route, url)) {
           this.ngProgress.done();
@@ -85,6 +89,18 @@ export class MenuListItemComponent implements OnInit, OnDestroy {
       b += item.trim().toLowerCase();
     });
     return a === b;
+  }
+
+  isRuteChildofMy(item: NavItem, rute: string) {
+
+    if (item.route && this.compareUrl(item.route, rute)) {
+      this.isChildOfMeFlag = true;
+      return;
+    }
+    let childrenList = JSON.parse(JSON.stringify(item.children));
+    for (let i = 0; i < childrenList.length; i++) {
+      this.isRuteChildofMy(childrenList[i], rute);
+    }
   }
 
 }

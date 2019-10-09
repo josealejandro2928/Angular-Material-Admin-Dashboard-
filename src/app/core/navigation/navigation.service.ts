@@ -9,14 +9,14 @@ export class NavigationService {
     {
       displayName: 'SAMPLE',
       iconName: ['home'],
-      route: 'backend/sample',
+      route: 'backend/path1',
       material: true,
       children: []
     },
     {
       displayName: 'SAMPLE1',
       iconName: ['search'],
-      route: 'backend/sample1',
+      route: 'backend/path2',
       material: true,
       children: []
     },
@@ -28,7 +28,7 @@ export class NavigationService {
       children: [
         {
           displayName: 'CATEGORY',
-          route: 'backend-hotels/hotels-calendar',
+          route: 'backend/path3',
           iconName: ['build'],
           material: true,
           children: []

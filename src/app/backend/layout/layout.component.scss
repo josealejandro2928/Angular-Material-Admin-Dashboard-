@@ -16,6 +16,12 @@ app-layout {
     perspective: 500px;
   }
 
+  #toolbarAgencyLogo {
+    min-height: 64px !important;
+    max-height: 100px !important;
+    height: auto !important;
+  }
+
   .AgencyTitulo {
     margin-bottom: 0px !important;
     margin-left: 10px !important;

@@ -17,7 +17,7 @@ export class Sample2Component implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.breadcrumbService.clearBreadcrumd();
-    this.breadcrumbService.setBreadcrumd('SAMPLE1', true);
+    this.breadcrumbService.setBreadcrumd('path2', true);
   }
 
   ngOnDestroy() {
