@@ -8,6 +8,8 @@ import {
 
 import { AppComponent } from './app.component';
 import { AuthenticationGuard } from './authentication/authentication.guard';
+import { BackendGuard } from './backend/backend.guard';
+
 
 const routes: Routes = [
   {
@@ -27,6 +29,8 @@ const routes: Routes = [
       {
         path: 'backend',
         loadChildren: () => import('../app/backend/backend.module').then(m => m.BackendModule),
+        canActivate: [BackendGuard],
+        canLoad: [BackendGuard]
       }
     ]
   },

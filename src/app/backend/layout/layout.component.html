@@ -95,9 +95,10 @@
             </mat-menu>
 
             <div fxLayout="row" class="py-1" fxLayoutAlign="start center">
-              <img class="ImageAvatar" *ngIf="!this.loggedInUser.image"
-                src="{{'../../../assets/images/users/user.png'}}" alt="user">
-              <img class="ImageAvatar" *ngIf="this.loggedInUser.image" src="{{userUrl+loggedInUser.image}}" alt="user"
+              <img class="ImageAvatar" *ngIf="!this.loggedInUser" src="{{'../../../assets/images/users/user.png'}}"
+                alt="user">
+              <img class="ImageAvatar" *ngIf="this.loggedInUser && this.loggedInUser.image"
+                src="{{userUrl+loggedInUser.image}}" alt="user"
                 onerror="this.onerror=null;this.src='../../../assets/images/users/user.png';">
             </div>
 
