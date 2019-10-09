@@ -1,8 +1,10 @@
 # FrontendPagosAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.9.
 
-It is an example of an admin dashboard project. It is based on angular material components and the use of flex-layout.
+
+It is a basic administration panel to develop a customized project. It includes slow loading in the modules, translation functionality, dynamically changing of material theme, notification panel, basic registration component and an example dialog to edit user properties.
+The two example modules are ready to load the logic you want.
 
 ## Development server
 
