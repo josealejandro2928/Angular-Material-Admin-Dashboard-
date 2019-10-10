@@ -48,10 +48,10 @@ export class MenuListItemComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.navService.currentUrl.pipe(takeUntil(this._unsubscribeAll)).subscribe((url: string) => {
       if (this.item.route && url) {
-        this.isChildOfMeFlag = false;
-        this.isRuteChildofMy(this.item, url);
-        this.expanded = this.isChildOfMeFlag;
-        this.ariaExpanded = this.expanded;
+        // this.isChildOfMeFlag = false;
+        // this.isRuteChildofMy(this.item, url);
+        // this.expanded = this.isChildOfMeFlag;
+        // this.ariaExpanded = this.expanded;
         if (this.compareUrl(this.item.route, url)) {
           this.ngProgress.done();
         }

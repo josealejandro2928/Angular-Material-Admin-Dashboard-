@@ -4,8 +4,6 @@ Author: Themedesigner
 Email: niravjoshi87@gmail.com
 File: scss
 */
-// Variables
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
 
 $bodyfont : 'Poppins',
 sans-serif;
@@ -18,7 +16,7 @@ sans-serif;
 
 ////////////////////////////////////////////////////////////////////////////
 @include mat-core();
-$custom-typography : mat-typography-config($font-family : 'Roboto');
+$custom-typography : mat-typography-config($font-family:'Roboto, Helvetica Neue, sans-serif');
 // Override the typography in the core CSS.
 @include mat-core($custom-typography);
 

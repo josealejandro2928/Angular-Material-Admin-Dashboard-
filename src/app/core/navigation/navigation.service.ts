@@ -23,7 +23,7 @@ export class NavigationService {
     {
       displayName: 'SAMPLE2',
       iconName: ['account_box'],
-      route: 'backend-hotels/hotels-tariffs-availability',
+      route: null,
       material: true,
       children: [
         {

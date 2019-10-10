@@ -5,8 +5,21 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="isHandset ? 'dialog' : 'navigation'"
     [mode]="isHandset ? 'over' : 'side'" [opened]="!isHandset">
 
-    <mat-toolbar id="toolbarAgencyLogo" color="primary">
-      <div fxLayout="row" class="w-100" fxLayoutAlign="start center" fxLayoutGap="gappx">
+    <mat-toolbar id="MainToolbarHeader" style="height: auto;" class="w-100" color="primary">
+
+      <mat-toolbar-row class="p-3" style="height: auto !important;" fxLayout="row" fxLayoutAlign="center center">
+        <div class="profile-img" fxLayoutAlign="center center">
+          <img src="../../../assets/images/background/angular-icon.svg">
+        </div>
+
+      </mat-toolbar-row>
+
+      <mat-toolbar-row class="p-2" style="height: auto !important;" fxLayoutAlign="center center">
+        <span class="mat-title mb-0">Admin Dashboard</span>
+      </mat-toolbar-row>
+
+      <!-- <div fxLayout="row" class="w-100" fxLayoutAlign="start center" fxLayoutGap="gappx">
+
         <div fxFlex="30" fxLayoutAlign="start center">
           <img *ngIf="true" height="54px" src="{{'../../../../../assets/images/background/loadingBackground.jpg"
             onerror="this.onerror=null;this.src='../../../assets/images/logo/havanatur_transparent_logo.png';" />
@@ -14,12 +27,20 @@
         <div fxLayout="column"  fxFlex="70" fxLayoutAlign="start center" fxLayoutGap="gappx">
             <span class="mat-title mb-0">{{'Agency Name'|translate}}</span>
         </div>
-      </div>
+        
+      </div> -->
+
     </mat-toolbar>
 
-    <mat-nav-list class = " navList">
-          <app-menu-list-item *ngFor=" let item of navigationData" [item]="item"></app-menu-list-item>
-          </mat-nav-list>
+    <mat-nav-list class="navList">
+      <app-menu-list-item *ngFor=" let item of navigationData" [item]="item"></app-menu-list-item>
+    </mat-nav-list>
+    <footer id="NavBarFooter" class="w-100">
+      <mat-toolbar style="height: 46px !important;" class="w-100" color="primary">
+        <span class="mat-caption mx-auto">Copiright &copy;2019</span>
+      </mat-toolbar>
+    </footer>
+
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="main-toolbar">
@@ -100,18 +121,17 @@
             </mat-menu>
 
             <div fxLayout="row" class="py-1" fxLayoutAlign="start center">
-              <img class="ImageAvatar" *ngIf="!this.loggedInUser" src="{{'../../../assets/images/users/user.png'}}"
-                alt="user">
+              <img class="ImageAvatar" *ngIf="!this.loggedInUser || !this.loggedInUser.image"
+                src="{{'../../../assets/images/users/user.png'}}" alt="user">
               <img class="ImageAvatar" *ngIf="this.loggedInUser && this.loggedInUser.image"
                 src="{{userUrl+loggedInUser.image}}" alt="user"
                 onerror="this.onerror=null;this.src='../../../assets/images/users/user.png';">
             </div>
 
 
-            <div fxLayout="column" fxHide.xs style="margin-right: 0px !important;" fxLayoutAlign="start start">
-              <span class="mat-body-1"
-                style="font-size: 13px !important; color:#fafafa !important">{{loggedInUser.name}}</span>
-              <span class="mat-caption" style="color:#f5f5f5 !important">{{loggedInUser.email}}</span>
+            <div fxLayout="column" fxHide.xs style="margin-right: 0px !important;" fxLayoutAlign="center start">
+              <span class="mat-body-1" style="font-size: 13px !important;">{{loggedInUser.name}}</span>
+              <span class="mat-caption">{{loggedInUser.email}}</span>
             </div>
           </div>
         </div>

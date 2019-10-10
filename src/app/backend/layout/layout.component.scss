@@ -16,10 +16,14 @@ app-layout {
     perspective: 500px;
   }
 
-  #toolbarAgencyLogo {
-    min-height: 64px !important;
-    max-height: 100px !important;
+  #MainToolbarHeader {
     height: auto !important;
+  }
+
+
+  #NavBarFooter {
+    position: absolute;
+    bottom: 0;
   }
 
   .AgencyTitulo {
@@ -39,8 +43,14 @@ app-layout {
   }
 
   .sidenav {
-    width: 300px;
+    width: 295px;
     box-shadow: 3px 0 6px rgba(0, 0, 0, .24);
+    background-color: #fafafa !important;
+  }
+
+  .mat-drawer-side {
+    border-right: solid 0px rgba(0, 0, 0, 0) !important;
+
   }
 
   @media only screen and (max-width: 480px) {
@@ -72,7 +82,7 @@ app-layout {
 
   .navList {
     margin-top: 16px !important;
-    max-height: 85vh !important;
+    max-height: 70% !important;
     overflow: auto;
   }
 
@@ -95,6 +105,75 @@ app-layout {
     position: fixed;
     top: 0px;
     z-index: 10;
+  }
+
+  .profile-img {
+    width: auto;
+    height: 54px;
+
+    &::before {
+      -webkit-animation: 2.5s blow 0s linear infinite;
+      animation: 2.5s blow 0s linear infinite;
+      position: absolute;
+      content: '';
+      width: 54px;
+      height: 54px;
+      // top: 31px;
+      margin: 0 auto;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    @-webkit-keyframes blow {
+      0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+
+      100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+    }
+
+    @keyframes blow {
+      0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+
+      100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+    }
+
+    img {
+      width: auto;
+      height: 54px;
+    }
   }
 
 }
