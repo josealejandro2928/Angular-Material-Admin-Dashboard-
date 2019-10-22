@@ -1,4 +1,4 @@
-import { IUser } from '../../../core/classes/user.class';;
+import { IUser } from '../../../core/classes/user.class';
 import { ShowToastrService } from '../../../core/ShowToastr/show-toastr.service';
 import { LoggedInUserService } from '../../../core/loggedInUser/logged-in-user.service';
 import { Component, Inject, HostListener, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
