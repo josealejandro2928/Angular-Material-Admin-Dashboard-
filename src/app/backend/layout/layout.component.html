@@ -38,7 +38,7 @@
     </mat-nav-list>
     <footer id="NavBarFooter" class="w-100">
       <mat-toolbar style="height: 46px !important;" class="w-100" color="primary">
-        <span class="mat-caption mx-auto">Copiright &copy;2019</span>
+        <span class="mat-caption mx-auto">{{'Copyright'|translate}} &copy;2019</span>
       </mat-toolbar>
     </footer>
 
@@ -113,11 +113,11 @@
             <mat-menu #menu="matMenu" class="mymegamenu">
               <button mat-menu-item (click)="onEditProfile()">
                 <mat-icon>account_box</mat-icon>
-                Mi Perfil
+                {{"My Profile"|translate}}
               </button>
               <button mat-menu-item (click)="logout()">
                 <mat-icon>exit_to_app</mat-icon>
-                Salir
+                {{"Exit"|translate}}
               </button>
             </mat-menu>
 

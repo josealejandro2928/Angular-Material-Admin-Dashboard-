@@ -17,5 +17,8 @@
 	"path2":"ruta2",
   "path3":"ruta3",
   "Agency Name":"Nomb. de Agencia",
-  "Save":"Guardar"
+  "Save":"Guardar",
+  "Copyright":"Derechos de autor",
+  "My Profile":"Mi Perfil",
+  "Exit":"Salir"
 }
