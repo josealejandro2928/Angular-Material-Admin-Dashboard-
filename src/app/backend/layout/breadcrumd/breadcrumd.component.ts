@@ -35,7 +35,7 @@ export class BreadcrumdComponent implements OnInit, OnDestroy {
 
   goToLink(breadcrumd: IBreadcrumdItem) {
     if (breadcrumd.link) {
-      this.ngProgress.start();
+      // this.ngProgress.start();
       this.router.navigate([breadcrumd.link]);
     }
   }

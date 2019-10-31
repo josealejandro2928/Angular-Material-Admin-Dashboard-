@@ -1,5 +1,6 @@
 <ng-progress [positionUsing]="'marginLeft'" [minimum]="0.15" [maximum]="1" [speed]="200" [showSpinner]="true"
-  [direction]="'leftToRightIncreased'" color="#ffc107" [trickleSpeed]="250" [thick]="false" [ease]="'linear'">
+  [direction]="'leftToRightIncreased'" [color]="this.themeConfigService.selectedTheme.secundaryColor"
+  [trickleSpeed]="250" [thick]="false" [ease]="'linear'">
 </ng-progress>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="isHandset ? 'dialog' : 'navigation'"

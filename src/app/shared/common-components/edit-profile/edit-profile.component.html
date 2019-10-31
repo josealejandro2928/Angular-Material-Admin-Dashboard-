@@ -33,30 +33,30 @@
       <mat-form-field appearance="outline">
         <mat-label>{{'username'|translate}}</mat-label>
         <input type="text" matInput placeholder="{{'username'|translate}}">
-        <mat-icon class="myIcon" matSuffix>account_circle</mat-icon>
+        <mat-icon class="greyIcon" matSuffix>account_circle</mat-icon>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>{{'name'|translate}}</mat-label>
         <input type="text" matInput placeholder="{{'name'|translate}}">
-        <mat-icon class="myIcon" matSuffix>person</mat-icon>
+        <mat-icon class="greyIcon" matSuffix>person</mat-icon>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>{{'latname'|translate}}</mat-label>
         <input type="text" matInput placeholder="{{'latname'|translate}}">
-        <mat-icon class="myIcon" matSuffix>person</mat-icon>
+        <mat-icon class="greyIcon" matSuffix>person</mat-icon>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>{{'email'|translate}}</mat-label>
         <input type="email" matInput placeholder="{{'email'|translate}}">
-        <mat-icon class="myIcon" matSuffix>mail</mat-icon>
+        <mat-icon class="greyIcon" matSuffix>mail</mat-icon>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>{{'password'|translate}}</mat-label>
         <input [type]="this.passwordType" matInput placeholder="{{'password'|translate}}">
-        <mat-icon style="cursor:pointer;" *ngIf="this.passwordType == 'password'" class="myIcon" matSuffix
+        <mat-icon style="cursor:pointer;" *ngIf="this.passwordType == 'password'" class="greyIcon" matSuffix
           (click)="this.passwordType = 'text'">
           visibility</mat-icon>
-        <mat-icon style="cursor:pointer;" *ngIf="this.passwordType == 'text'" class="myIcon" matSuffix
+        <mat-icon style="cursor:pointer;" *ngIf="this.passwordType == 'text'" class="greyIcon" matSuffix
           (click)="this.passwordType = 'password'">
           visibility_off</mat-icon>
 

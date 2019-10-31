@@ -28,5 +28,7 @@ export class AppComponent {
     } else {
       this.translate.setDefaultLang(language);
     }
+    ///Definin initial theme/////
+    document.getElementById('BodyAppClass').className = this.themeConfigService.selectedTheme.className;
   }
 }

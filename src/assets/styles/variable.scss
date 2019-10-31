@@ -150,6 +150,29 @@ $warn-color-100 : mat-color($warn-100);
     background-color: $main-color !important;
   }
 
+  .menu-icons-nav-bar {
+    font-size: 18px !important;
+
+    mat-icon {
+      color: #616161;
+      margin: 0px !important
+    }
+
+    fa-icon {
+      padding-right: 10px !important;
+    }
+  }
+
+  .icon-arrow-nav-bar {
+    font-size: 24px !important;
+    color: #616161;
+    margin: 0px !important
+  }
+
+  .greyIcon {
+    color: #616161 !important;
+  }
+
 }
 
 .tealThemeClass {
@@ -160,7 +183,7 @@ $warn-color-100 : mat-color($warn-100);
   $teal-primary-200: mat-palette($mat-teal, 200);
   $teal-primary-500: mat-palette($mat-teal, 500);
   $teal-primary-700: mat-palette($mat-teal, 700);
-  $teal-accent: mat-palette($mat-pink, 900);
+  $teal-accent: mat-palette($mat-orange, 500);
   $tealTheme: mat-light-theme($teal-primary, $teal-accent, $warn);
 
   // $background: map-get($tealTheme, background);
@@ -275,6 +298,29 @@ $warn-color-100 : mat-color($warn-100);
     left: 2px;
     border-radius: 4px;
     background-color: $main-color !important;
+  }
+
+  .menu-icons-nav-bar {
+    font-size: 18px !important;
+
+    mat-icon {
+      color: #616161;
+      margin: 0px !important
+    }
+
+    fa-icon {
+      padding-right: 10px !important;
+    }
+  }
+
+  .icon-arrow-nav-bar {
+    font-size: 24px !important;
+    color: #616161;
+    margin: 0px !important
+  }
+
+  .greyIcon {
+    color: #616161 !important;
   }
 
 }
@@ -403,29 +449,52 @@ $warn-color-100 : mat-color($warn-100);
     border-radius: 4px;
     background-color: $main-color !important;
   }
+
+  .menu-icons-nav-bar {
+    font-size: 18px !important;
+
+    mat-icon {
+      color: #616161;
+      margin: 0px !important
+    }
+
+    fa-icon {
+      padding-right: 10px !important;
+    }
+  }
+
+  .icon-arrow-nav-bar {
+    font-size: 24px !important;
+    color: #616161;
+    margin: 0px !important
+  }
+
+  .greyIcon {
+    color: #616161 !important;
+  }
 }
 
 ///////////////////////*Yellow Theme*/////////////////////////////////////
 
-.yellowThemeClass {
-  $yellow-primary: mat-palette($mat-yellow, 800, 700, 100);
-  $yellow-primary-50: mat-palette($mat-yellow, 50);
-  $yellow-primary-100: mat-palette($mat-yellow, 100);
-  $yellow-primary-200: mat-palette($mat-yellow, 200);
-  $yellow-primary-500: mat-palette($mat-yellow, 500);
-  $yellow-primary-700: mat-palette($mat-yellow, 600);
+.greenThemeClass {
+  $green-primary: mat-palette($mat-green, 700, 600, 100);
+  $green-primary-50: mat-palette($mat-green, 50);
+  $green-primary-100: mat-palette($mat-green, 100);
+  $green-primary-200: mat-palette($mat-green, 200);
+  $green-primary-500: mat-palette($mat-green, 500);
+  $green-primary-700: mat-palette($mat-green, 600);
 
-  $yellow-accent: mat-palette($mat-blue, 400);
-  $yellowTheme: mat-light-theme($yellow-primary, $yellow-accent, $warn);
+  $green-accent: mat-palette($mat-purple, 400);
+  $greenTheme: mat-light-theme($green-primary, $green-accent, $warn);
 
-  $main-color: mat-color($yellow-primary);
-  $main-color-50: mat-color($yellow-primary-50);
-  $main-color-100: mat-color($yellow-primary-100);
-  $main-color-200: mat-color($yellow-primary-200);
-  $main-color-500: mat-color($yellow-primary-500);
-  $main-color-700: mat-color($yellow-primary-700);
-  $accent-color: mat-color($yellow-accent);
-  @include angular-material-theme($yellowTheme);
+  $main-color: mat-color($green-primary);
+  $main-color-50: mat-color($green-primary-50);
+  $main-color-100: mat-color($green-primary-100);
+  $main-color-200: mat-color($green-primary-200);
+  $main-color-500: mat-color($green-primary-500);
+  $main-color-700: mat-color($green-primary-700);
+  $accent-color: mat-color($green-accent);
+  @include angular-material-theme($greenTheme);
   @include layout-theme($main-color, $main-color-700, $main-color-500, $main-color-100, $accent-color);
   @include menu-list-item-theme($main-color, $main-color-100, $main-color-500, $main-color-700, $accent-color);
 
@@ -527,6 +596,29 @@ $warn-color-100 : mat-color($warn-100);
     left: 2px;
     border-radius: 4px;
     background-color: $main-color !important;
+  }
+
+  .menu-icons-nav-bar {
+    font-size: 18px !important;
+
+    mat-icon {
+      color: #616161;
+      margin: 0px !important
+    }
+
+    fa-icon {
+      padding-right: 10px !important;
+    }
+  }
+
+  .icon-arrow-nav-bar {
+    font-size: 24px !important;
+    color: #616161;
+    margin: 0px !important
+  }
+
+  .greyIcon {
+    color: #616161 !important;
   }
 }
 
@@ -654,18 +746,41 @@ $warn-color-100 : mat-color($warn-100);
     background-color: $main-color !important;
   }
 
+  .menu-icons-nav-bar {
+    font-size: 18px !important;
+
+    mat-icon {
+      color: #616161;
+      margin: 0px !important
+    }
+
+    fa-icon {
+      padding-right: 10px !important;
+    }
+  }
+
+  .icon-arrow-nav-bar {
+    font-size: 24px !important;
+    color: #616161;
+    margin: 0px !important
+  }
+
+  .greyIcon {
+    color: #616161 !important;
+  }
+
 }
 
 // ///////////////////////*Purple Theme*/////////////////////////////////////
 .purpleThemeClass {
-  $purple-primary: mat-palette($mat-purple, 900, 700, 100);
+  $purple-primary: mat-palette($mat-purple, 500, 600, 100);
   $purple-primary-50: mat-palette($mat-purple, 50);
   $purple-primary-100: mat-palette($mat-purple, 100);
   $purple-primary-200: mat-palette($mat-purple, 200);
-  $purple-primary-500: mat-palette($mat-purple, 500);
-  $purple-primary-700: mat-palette($mat-purple, 700);
-  $purple-accent: mat-palette($mat-green, 800);
-  $purpleTheme: mat-light-theme($purple-primary, $purple-accent, $warn);
+  $purple-primary-500: mat-palette($mat-purple, 400);
+  $purple-primary-700: mat-palette($mat-purple, 500);
+  $purple-accent: mat-palette($mat-green, 700);
+  $purpleTheme: mat-dark-theme($purple-primary, $purple-accent, $warn);
 
   /*Theme Colors*/
   $main-color: mat-color($purple-primary);
@@ -779,6 +894,24 @@ $warn-color-100 : mat-color($warn-100);
     border-radius: 4px;
     background-color: $main-color !important;
   }
+
+  .menu-icons-nav-bar {
+    font-size: 18px !important;
+
+    mat-icon {
+      margin: 0px !important
+    }
+
+    fa-icon {
+      padding-right: 10px !important;
+    }
+  }
+
+  .icon-arrow-nav-bar {
+    font-size: 24px !important;
+    margin: 0px !important
+  }
+
 }
 
 ///////////////////////////////////////////////////////////////////////

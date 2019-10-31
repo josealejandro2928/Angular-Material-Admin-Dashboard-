@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
 
   login(username: string, password: string): boolean {
     this.inLoading = true;
-    document.getElementById('BodyAppClass').className = this.themeConfigService.selectedTheme.className;
     this.inLoading = false;
     this.loggedInUserService.setLoggedInUser(
       {

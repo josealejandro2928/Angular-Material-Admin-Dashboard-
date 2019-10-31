@@ -195,6 +195,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   ///////THeming Changes /////
   onChangeTheme(theme: Theme): void {
     document.getElementById('BodyAppClass').className = theme.className;
+    this.themeConfigService.selectedTheme = theme;
   }
 
   //////Change Lenguaje///////////

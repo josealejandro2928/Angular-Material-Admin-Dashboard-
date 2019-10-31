@@ -66,12 +66,10 @@
     display: flex !important;
     flex-wrap: wrap !important;
     margin-bottom: 0px !important;
-    background: #fafafa;
   }
 
   .my-dialog-content {
     padding: 16px !important;
-    background: #fafafa;
     margin: 0px !important;
   }
 
@@ -81,9 +79,5 @@
     // padding: 0 24px;
     max-height: 76vh;
     overflow: auto;
-  }
-
-  .myIcon {
-    color: #616161 !important;
   }
 }

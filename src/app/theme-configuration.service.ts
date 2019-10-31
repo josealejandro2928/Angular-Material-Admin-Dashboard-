@@ -4,6 +4,7 @@ import { LoggedInUserService } from './core/loggedInUser/logged-in-user.service'
 
 export interface Theme {
   mainColor?: any;
+  secundaryColor?: any;
   id?: any;
   label?: string;
   name?: string;
@@ -18,30 +19,42 @@ export class ThemeConfigurationService {
   selectedTheme: Theme = null;
   ListThemes: Theme[] = [
     {
-      mainColor: '#0d47a1', id: 1,
+      mainColor: '#0d47a1',
+      secundaryColor: '#ffc107',
+      id: 1,
       label: 'blueTheme', name: 'Blue',
       className: 'customThemeClass'
     },
     {
-      mainColor: '#004d40', id: 2,
+      mainColor: '#004d40',
+      secundaryColor: '#fb8c00',
+      id: 2,
       label: 'tealTheme', name: 'Teal',
       className: 'tealThemeClass'
     },
     {
-      mainColor: '#b71c1c', id: 3,
+      mainColor: '#b71c1c',
+      secundaryColor: '#4db6ac',
+      id: 3,
       label: 'redTheme', name: 'Red',
       className: 'redThemeClass'
     }, {
-      mainColor: '#fdd835', id: 4,
-      label: 'yellowTheme', name: 'Yellow',
-      className: 'yellowThemeClass'
+      mainColor: '#388e3c',
+      secundaryColor: '#ab47bc',
+      id: 4,
+      label: 'greenTheme', name: 'Green',
+      className: 'greenThemeClass'
     }, {
-      mainColor: '#e65100', id: 5,
+      mainColor: '#e65100',
+      secundaryColor: '#1976d2',
+      id: 5,
       label: 'orangeTheme', name: 'Orange',
       className: 'orangeThemeClass'
     },
     {
-      mainColor: '#4a148c', id: 6,
+      mainColor: '#4a148c',
+      secundaryColor: '#388e3c',
+      id: 6,
       label: 'purpleTheme', name: 'Purple',
       className: 'purpleThemeClass'
     }

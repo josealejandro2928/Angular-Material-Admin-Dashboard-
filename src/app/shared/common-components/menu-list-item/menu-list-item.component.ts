@@ -17,9 +17,9 @@ import { PreviousRouteService } from 'src/app/core/previous-route/previous-route
   animations: [
     trigger('indicatorRotate', [
       state('collapsed', style({ transform: 'rotate(0deg)' })),
-      state('expanded', style({ transform: 'rotate(180deg)' })),
+      state('expanded', style({ transform: 'rotate(90deg)' })),
       transition('expanded <=> collapsed',
-        animate('400ms cubic-bezier(0.4,0.0,0.2,1)')
+        animate('250ms cubic-bezier(0.4,0.0,0.2,1)')
       ),
     ])
   ]

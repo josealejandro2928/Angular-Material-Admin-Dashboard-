@@ -16,22 +16,9 @@
   padding: 2px 0;
   display: flex;
   width: auto;
-  color: $grey-700;
+  color: #616161;
 
   .routeIcon {
     margin-right: 30px;
-  }
-}
-
-.menu-icons {
-  font-size: 18px !important;
-
-  mat-icon {
-    color: $grey-700;
-    margin: 0px !important
-  }
-
-  fa-icon {
-    padding-right: 10px !important;
   }
 }
