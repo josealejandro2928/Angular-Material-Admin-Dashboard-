@@ -4,7 +4,6 @@
 @import "./assets/styles/mixins";
 @import "./assets/styles/pallete-colors";
 @import "./assets/styles/pallete-backgrounds";
-@import "./assets/styles/header";
 @import "./assets/styles/helpers/helpers";
 // regular style toast
 @import "~ngx-toastr/toastr.css";
@@ -17,7 +16,7 @@ body {
   height: 100% !important;
   width: 100% !important;
   margin: 0;
-  font-family: 'Roboto Condensed', sans-serif !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .height-100 {

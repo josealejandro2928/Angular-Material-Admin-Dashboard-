@@ -16,7 +16,7 @@ sans-serif;
 
 ////////////////////////////////////////////////////////////////////////////
 @include mat-core();
-$custom-typography : mat-typography-config($font-family:'Roboto Condensed,sans-serif');
+$custom-typography : mat-typography-config($font-family:'Roboto,sans-serif');
 // Override the typography in the core CSS.
 @include mat-core($custom-typography);
 

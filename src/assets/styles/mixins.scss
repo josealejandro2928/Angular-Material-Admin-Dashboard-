@@ -1,138 +1,129 @@
-$mq-mobile-portrait : 320px !default;
-$mq-mobile-landscape : 480px !default;
-$mq-tablet-portrait : 768px !default;
-$mq-tablet-landscape : 1024px !default;
-$mq-desktop : 1382px !default;
+// Media step breakpoint mixin based on Angular Material lib
+$breakpoints: (xs: 'screen and (max-width: 599px)',
+  sm: 'screen and (min-width: 600px) and (max-width: 959px)',
+  md: 'screen and (min-width: 960px) and (max-width: 1279px)',
+  lg: 'screen and (min-width: 1280px) and (max-width: 1919px)',
+  xl: 'screen and (min-width: 1920px) and (max-width: 5000px)',
+  lt-sm: 'screen and (max-width: 599px)',
+  lt-md: 'screen and (max-width: 959px)',
+  lt-lg: 'screen and (max-width: 1279px)',
+  lt-xl: 'screen and (max-width: 1919px)',
+  gt-xs: 'screen and (min-width: 600px)',
+  gt-sm: 'screen and (min-width: 960px)',
+  gt-md: 'screen and (min-width: 1280px)',
+  gt-lg: 'screen and (min-width: 1920px)'
+) !default;
 
-@mixin mobile-only {
-  @media screen and (min-width : 320px) and (max-width : 767px) {
+$grid-breakpoints: (xs: 0,
+  sm: 600px,
+  md: 960px,
+  lg: 1280px,
+  xl: 1920px) !default;
+
+@mixin media-breakpoint($breakpointName) {
+
+  $mediaQuery: map-get($breakpoints, $breakpointName);
+
+  @if ($mediaQuery !=null) {
+
+    @media #{$mediaQuery} {
+      @content
+    }
+  }
+}
+
+//    >> breakpoint-next(sm)
+//    md
+//    >> breakpoint-next(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    md
+//    >> breakpoint-next(sm, $breakpoint-names: (xs sm md lg xl))
+//    md
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+//    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    576px
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min !=0, $min, null);
+}
+
+// Maximum breakpoint width. Null for the largest (last) breakpoint.
+// The maximum value is calculated as the minimum of the next one less 0.1.
+//
+//    >> breakpoint-max(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    767px
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - 1px, null);
+}
+
+// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash infront.
+// Useful for making responsive utilities.
+//
+//    >> breakpoint-infix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    ""  (Returns a blank string)
+//    >> breakpoint-infix(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    "-sm"
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints)==null, "", "-#{$name}");
+}
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+
+  @else {
     @content;
   }
 }
 
-@mixin mobile-only-two {
-  @media screen and (max-width : 916px) {
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  }
+
+  @else {
     @content;
   }
 }
 
-// Everything up to and including the portrait width of the phone
-// Since it's the smallest query it doesn't need a min
-@mixin mobile-portrait-only {
-  @media (max-width : $mq-mobile-portrait) {
+// Media that spans multiple breakpoint widths.
+// Makes the @content apply between the min and max breakpoints
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-max($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @media (min-width: $min) and (max-width: $max) {
     @content;
   }
 }
 
-// Everything up to and including the mobile portrait
-@mixin mobile-portrait-and-below {
-  @media (max-width : $mq-mobile-portrait) {
-    @content;
-  }
-}
+// Media between the breakpoint's minimum and maximum widths.
+// No minimum for the smallest breakpoint, and no maximum for the largest one.
+// Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  $max: breakpoint-max($name, $breakpoints);
 
-// Everything above and including the mobile portrait
-@mixin mobile-portrait-and-up {
-  @media (min-width : $mq-mobile-portrait) {
-    @content;
-  }
-}
-
-// Everthing larger than a portrait mobile up until mobile landscape
-@mixin mobile-landscape-only {
-  @media only screen and (min-width : $mq-mobile-portrait + 1) and (max-width : $mq-mobile-landscape) {
-    @content;
-  }
-}
-
-// Everything up to and including the mobile landscape width
-@mixin mobile-landscape-and-below {
-  @media only screen and (max-width : $mq-mobile-landscape) {
-    @content;
-  }
-}
-
-// Everything above and including the mobile landscape width
-@mixin mobile-landscape-and-up {
-  @media only screen and (min-width : $mq-mobile-portrait + 1) {
-    @content;
-  }
-}
-
-// Both the portrait and landscape width of the tablet
-// Larger than a landscape mobile but less than or equal to a landscape tablet
-@mixin tablet-only {
-  @media only screen and (min-width : $mq-mobile-landscape + 1) and (max-width : $mq-tablet-landscape) {
-    @content;
-  }
-}
-
-// Everything larger than mobile landscape up until the portrait width of the tablet
-@mixin tablet-portrait-only {
-  @media only screen and (min-width : $mq-mobile-landscape + 1) and (max-width : $mq-tablet-portrait) {
-    @content;
-  }
-}
-
-// Everything below and including the portrait width of the tablet
-@mixin tablet-portrait-and-below {
-  @media only screen and (max-width : $mq-tablet-portrait) {
-    @content;
-  }
-}
-
-// Everything above and including the portrait width of the tablet
-@mixin tablet-portrait-and-up {
-  @media only screen and (min-width : $mq-mobile-landscape + 1) {
-    @content;
-  }
-}
-
-// Larger than portrait but less than or equal to the landscape width
-@mixin tablet-landscape-only {
-  @media only screen and (min-width : $mq-tablet-portrait + 1) and (max-width : $mq-tablet-landscape) {
-    @content;
-  }
-}
-
-// Up to and including the tablet landscape
-@mixin tablet-landscape-and-below {
-  @media only screen and (max-width : $mq-tablet-landscape) {
-    @content;
-  }
-}
-
-// Everything larger than portrait tablet
-@mixin tablet-landscape-and-up {
-  @media only screen and (min-width : $mq-tablet-portrait + 1) {
-    @content;
-  }
-}
-
-// Everything larger than a landscape tablet
-@mixin desktop-and-up {
-  @media only screen and (min-width : $mq-tablet-landscape + 1) {
-    @content;
-  }
-}
-
-// Everything below and including the desktop
-@mixin desktop-and-below {
-  @media only screen and (max-width : $mq-desktop) {
-    @content;
-  }
-}
-
-// Everything larger than a landscape tablet but less than or equal to the desktop
-@mixin desktop-only {
-  @media only screen and (min-width : $mq-tablet-landscape + 1) and (max-width : $mq-desktop) {
-    @content;
-  }
-}
-
-// Retina screens have a 1.5 pixel ratio, not 2
-@mixin retina {
-  @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+  @media (min-width: $min) and (max-width: $max) {
     @content;
   }
 }
