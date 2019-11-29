@@ -6,10 +6,6 @@
   outline: none;
   width: 100%;
 
-  // &:hover {
-  //   background-color: $grey-700;
-  // }
-
 }
 
 .mat-list-item {
@@ -21,4 +17,9 @@
   .routeIcon {
     margin-right: 30px;
   }
+
+  &:hover {
+    border-radius: 24px;
+  }
+
 }
